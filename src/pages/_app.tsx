@@ -3,11 +3,10 @@ import { ThemeProvider } from 'styled-components'
 import { theme } from '@styles/theme'
 import GlobalStyle from '@styles/GlobalStyle'
 import Head from 'next/head'
-import BottomBar from '@components/atoms/BottomBar'
 import { useState } from 'react'
-import Loading from '@components/atoms/Loading'
 
 function App({ Component, pageProps }: AppProps) {
+  // TODO: Loading
   const [loading, setLoading] = useState(false)
 
   return (
@@ -15,8 +14,7 @@ function App({ Component, pageProps }: AppProps) {
       <FirstHead />
       <ThemeProvider theme={theme}>
         <GlobalStyle />
-        {loading && <Loading />}
-        <BottomBar {...{ setLoading }} />
+        {loading && <div>LOADING</div>}
         <Component {...pageProps} />
       </ThemeProvider>
     </>
@@ -24,12 +22,13 @@ function App({ Component, pageProps }: AppProps) {
 }
 
 function FirstHead() {
+  // TODO: FirstHead
   return (
     <Head>
       {/* FONTS */}
       <link rel="preconnect" href="https://fonts.gstatic.com" />
       <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,700;1,700&family=Montserrat:ital,wght@0,300;0,500;0,700;1,300;1,500;1,700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,600;0,900;1,300;1,600;1,900&display=swap"
         rel="stylesheet"
       />
       {/* FAVICON */}

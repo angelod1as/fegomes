@@ -1,10 +1,10 @@
 // import fetchContentful from '@functions/fetchContentful'
-import Home from '@sections/home/index'
+import Home from '@pageComponents/home/index'
 
-export default function Index({ homeData }) {
+export default function Index() {
   return (
     <>
-      <Home homeData={homeData} />
+      <Home />
     </>
   )
 }

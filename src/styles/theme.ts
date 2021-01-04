@@ -8,8 +8,15 @@ const color = {
 }
 
 const font = {
-  display: 'Montserrat Alternates',
-  text: 'Montserrat',
+  family: {
+    display: "'Fira Sans', sans-serif",
+    text: "'Fira Sans', sans-serif",
+  },
+  size: {
+    regular: 300,
+    medium: 600,
+    bold: 900,
+  },
 }
 
 const size = {
@@ -26,7 +33,14 @@ const numbers = {
 export interface ThemeProps {
   size: { [key in keyof typeof size]: string }
   color: { [key in keyof typeof color]: string }
-  font: { [key in keyof typeof font]: string }
+  font: {
+    family: {
+      [key in keyof typeof font.family]: string
+    }
+    size: {
+      [key in keyof typeof font.size]: number
+    }
+  }
   numbers: { [key in keyof typeof numbers]: string | number }
 }
 

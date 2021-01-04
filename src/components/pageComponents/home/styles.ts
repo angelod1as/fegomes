@@ -45,9 +45,9 @@ export const Inside = styled.div`
 export const Text = styled.p`
   margin: 0;
   padding: 0;
-  font-weight: bold;
+  font-weight: ${p => p.theme.font.size.medium};
   font-size: 3em;
-  font-family: ${p => p.theme.font.display};
+  font-family: ${p => p.theme.font.family.text};
 `
 
 export const Small = styled(Text)`

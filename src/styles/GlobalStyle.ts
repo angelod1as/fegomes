@@ -17,7 +17,7 @@ const GlobalStyle = createGlobalStyle<GlobalProps>`
   }
 
   body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: ${p => p.theme.font.family.text};
   }
 
   * {
@@ -29,9 +29,9 @@ const GlobalStyle = createGlobalStyle<GlobalProps>`
   }
 
   p {
-    font-family: Montserrat, sans-serif;
+    font-family: ${p => p.theme.font.family.text};
     font-size: 18px;
-    font-weight: 300;
+    font-weight: ${p => p.theme.font.size.regular};
     line-height: 1.4em;
     margin-bottom: 1em;
   }
@@ -48,8 +48,9 @@ const GlobalStyle = createGlobalStyle<GlobalProps>`
   h1, h2, h3 {
     margin: 60px 0 30px 0;
     padding: 0;
-    font-family: 'Montserrat Alternates', 'Montserrat', sans-serif;
-    font-weight: 700;
+    font-family: ${p => p.theme.font.family.display};
+    font-weight: ${p => p.theme.font.size.bold};
+    font-style: italic;
   }
 
   h1 {
@@ -70,7 +71,7 @@ const GlobalStyle = createGlobalStyle<GlobalProps>`
   a {
     display: inline-block;
     color: ${p => p.theme.color.black};
-    font-weight: 500;
+    font-weight: ${p => p.theme.font.size.medium};
     transition: all .2s;
     text-decoration: underline;
     &:hover {
@@ -96,7 +97,7 @@ const GlobalStyle = createGlobalStyle<GlobalProps>`
   }
 
   b, strong {
-    font-weight: 700;
+        font-weight: ${p => p.theme.font.size.bold};
   }
 
   i, em {
@@ -121,12 +122,12 @@ const GlobalStyle = createGlobalStyle<GlobalProps>`
     &:before {
       content: '\\203A';
       font-style: normal;
-      font-weight: 700;
+          font-weight: ${p => p.theme.font.size.bold};
       padding-right: 15px;
     }
     margin-top: 10px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 300;
+    font-family: ${p => p.theme.font.family.text};
+    font-weight: ${p => p.theme.font.size.regular};
     font-style: italic;
   }
 
@@ -138,7 +139,7 @@ const GlobalStyle = createGlobalStyle<GlobalProps>`
       position: relative;
       line-height: 1.2em;
       &:before {
-        font-weight: 700;
+            font-weight: ${p => p.theme.font.size.bold};
         top: -1px;
         left: 5px;
         position: absolute;
