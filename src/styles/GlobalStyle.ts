@@ -31,8 +31,8 @@ const GlobalStyle = createGlobalStyle<GlobalProps>`
   p {
     font-family: ${p => p.theme.font.family.text};
     font-size: 18px;
-    font-weight: ${p => p.theme.font.size.regular};
-    line-height: 1.4em;
+    font-weight: ${p => p.theme.font.weight.regular};
+    line-height: 130%;
     margin-bottom: 1em;
   }
 
@@ -49,18 +49,18 @@ const GlobalStyle = createGlobalStyle<GlobalProps>`
     margin: 60px 0 30px 0;
     padding: 0;
     font-family: ${p => p.theme.font.family.display};
-    font-weight: ${p => p.theme.font.size.bold};
+    font-weight: ${p => p.theme.font.weight.bold};
     font-style: italic;
   }
 
   h1 {
     font-size: 48px;
-    line-height: 110%;
+    line-height: 120%;
   }
 
   h2 {
     font-size: 30px;
-    line-height: 120%;
+    line-height: 130%;
   }
 
   h3 {
@@ -71,7 +71,7 @@ const GlobalStyle = createGlobalStyle<GlobalProps>`
   a {
     display: inline-block;
     color: ${p => p.theme.color.black};
-    font-weight: ${p => p.theme.font.size.medium};
+    font-weight: ${p => p.theme.font.weight.medium};
     transition: all .2s;
     text-decoration: underline;
     &:hover {
@@ -97,7 +97,7 @@ const GlobalStyle = createGlobalStyle<GlobalProps>`
   }
 
   b, strong {
-        font-weight: ${p => p.theme.font.size.bold};
+        font-weight: ${p => p.theme.font.weight.bold};
   }
 
   i, em {
@@ -122,12 +122,12 @@ const GlobalStyle = createGlobalStyle<GlobalProps>`
     &:before {
       content: '\\203A';
       font-style: normal;
-          font-weight: ${p => p.theme.font.size.bold};
+          font-weight: ${p => p.theme.font.weight.bold};
       padding-right: 15px;
     }
     margin-top: 10px;
     font-family: ${p => p.theme.font.family.text};
-    font-weight: ${p => p.theme.font.size.regular};
+    font-weight: ${p => p.theme.font.weight.regular};
     font-style: italic;
   }
 
@@ -139,7 +139,7 @@ const GlobalStyle = createGlobalStyle<GlobalProps>`
       position: relative;
       line-height: 1.2em;
       &:before {
-            font-weight: ${p => p.theme.font.size.bold};
+            font-weight: ${p => p.theme.font.weight.bold};
         top: -1px;
         left: 5px;
         position: absolute;

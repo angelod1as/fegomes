@@ -12,7 +12,7 @@ const font = {
     display: "'Fira Sans', sans-serif",
     text: "'Fira Sans', sans-serif",
   },
-  size: {
+  weight: {
     regular: 300,
     medium: 600,
     bold: 900,
@@ -30,6 +30,7 @@ const size = {
 
 const numbers = {
   radius: 0,
+  menuHeight: 50,
 }
 
 export interface ThemeProps {
@@ -39,8 +40,8 @@ export interface ThemeProps {
     family: {
       [key in keyof typeof font.family]: string
     }
-    size: {
-      [key in keyof typeof font.size]: number
+    weight: {
+      [key in keyof typeof font.weight]: number
     }
   }
   numbers: { [key in keyof typeof numbers]: string | number }

@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import Button from '../Button'
 import Hamburger from './Hamburger'
 import { Wrapper, Title } from './style'
@@ -5,7 +6,9 @@ import { Wrapper, Title } from './style'
 export default function TopBar() {
   return (
     <Wrapper>
-      <Title>FeGomes Podcast</Title>
+      <Title>
+        <Link href="/">FeGomes Podcast</Link>
+      </Title>
       <Hamburger>
         <Button to="/como-funciona" hollow>
           Como funciona

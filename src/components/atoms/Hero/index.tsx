@@ -1,5 +1,5 @@
 import Button from '../Button'
-import { Wrapper, TitleHolder, Lead } from './styles'
+import { Wrapper, TitleHolder, Lead, Filter, Holder } from './styles'
 
 interface HeroProps {
   title: string
@@ -15,9 +15,12 @@ export default function Hero({ title, lead, button, to, bg, main }: HeroProps) {
 
   return (
     <Wrapper bg={bg}>
-      {title && <TitleHolder>{titleTag}</TitleHolder>}
-      {lead && <Lead>{lead}</Lead>}
-      {button && <Button to={to}>{button}</Button>}
+      <Filter />
+      <Holder>
+        {title && <TitleHolder>{titleTag}</TitleHolder>}
+        {lead && <Lead>{lead}</Lead>}
+        {button && <Button to={to}>{button}</Button>}
+      </Holder>
     </Wrapper>
   )
 }

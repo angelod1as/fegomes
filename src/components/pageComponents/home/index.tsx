@@ -9,11 +9,11 @@ export default function Home() {
     <Wrapper>
       <TopBar />
       <Hero
-        title="Lorem"
-        lead="Lorem"
+        title="Transforme seu projeto em realidade"
+        lead="Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum minus, saepe architecto odit ducimusa"
         button="Saiba mais"
         to="/projetos"
-        bg=""
+        bg="https://images.unsplash.com/photo-1544719576-904e2d01e057?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1376&q=80"
         main
       ></Hero>
       <Section title="Projetos de destaque" bg="clear">
