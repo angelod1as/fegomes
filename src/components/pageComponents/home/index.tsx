@@ -1,15 +1,21 @@
+import TopBar from '@components/atoms/TopBar'
+import Hero from '@components/atoms/Hero'
+import Section from '@components/atoms/Section'
+import Footer from '@components/atoms/Footer'
+
 export default function Home() {
   return (
     <div>
-      <p>TopBar</p>
-      <div>
-        {/* HERO */}
-        <h1>Hero Title</h1>
-        <p>Lead</p>
-        <button>Button</button>
-      </div>
-      <div>
-        <h2>Projetos de destaque</h2>
+      <TopBar></TopBar>
+      <Hero
+        title="Lorem"
+        lead="Lorem"
+        button="Saiba mais"
+        to="/projetos"
+        bg=""
+        main
+      ></Hero>
+      <Section title="Projetos de destaque" bg="clear">
         <div>
           {/* Mosaic */}
           <div>
@@ -31,9 +37,8 @@ export default function Home() {
             <button>Saiba mais</button>
           </div>
         </div>
-      </div>
-      <div>
-        <h2>Nossos podcasts</h2>
+      </Section>
+      <Section title="Nossos podcasts" bg="clear">
         <div>
           <p>Imagem</p>
           <h3>Projeto 1</h3>
@@ -52,9 +57,8 @@ export default function Home() {
           <p>Lead</p>
           <button>Saiba mais</button>
         </div>
-      </div>
-      <div>
-        <h2>Como funciona</h2>
+      </Section>
+      <Section title="Como funciona" bg="clear">
         <div>
           <p>Ícone</p>
           <h3>Tratamento</h3>
@@ -73,18 +77,30 @@ export default function Home() {
           <p>Lead</p>
           <button>Saiba mais</button>
         </div>
-      </div>
-      <div>
-        <h2>Vamos trabalhar juntos?</h2>
-        <p>lead</p>
-        <button>Contact</button>
-      </div>
-      <div>
-        <h3>Footer</h3>
-        <p>Lead</p>
-        <div>SOCIAL</div>
-        <div>BottomBar</div>
-      </div>
+      </Section>
+      <Hero
+        title="Vamos trabalhar juntos?"
+        lead="lead"
+        button="Contato"
+        to="/contato"
+        bg=""
+      />
+      <Footer
+        title="FeGomes Podcast"
+        lead="lorem"
+        social={[
+          {
+            social: 'facebook',
+            url: 'url',
+            icon: 'facebook',
+          },
+          {
+            social: 'instagram',
+            url: 'url',
+            icon: 'instagram',
+          },
+        ]}
+      />
     </div>
   )
 }
