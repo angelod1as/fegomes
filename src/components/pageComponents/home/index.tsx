@@ -2,11 +2,12 @@ import TopBar from '@components/atoms/TopBar'
 import Hero from '@components/atoms/Hero'
 import Section from '@components/atoms/Section'
 import Footer from '@components/atoms/Footer'
+import { Wrapper } from './styles'
 
 export default function Home() {
   return (
-    <div>
-      <TopBar></TopBar>
+    <Wrapper>
+      <TopBar />
       <Hero
         title="Lorem"
         lead="Lorem"
@@ -101,6 +102,6 @@ export default function Home() {
           },
         ]}
       />
-    </div>
+    </Wrapper>
   )
 }

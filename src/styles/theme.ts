@@ -20,10 +20,12 @@ const font = {
 }
 
 const size = {
-  largest: `(max-width: 1400px)`,
-  large: `(max-width: 1100px)`,
-  medium: `(max-width: 800px)`,
-  small: `(max-width: 600px)`,
+  larger: `(min-width: 1281px)`,
+  large: `(min-width: 1025px)`,
+  medium: `(min-width: 961px)`,
+  small: `(min-width: 641px)`,
+  smaller: `(min-width: 481px`,
+  mini: `(min-width: 320px)`,
 }
 
 const numbers = {

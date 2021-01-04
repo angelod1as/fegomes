@@ -1,10 +1,12 @@
 import Button from '../Button'
+import Hamburger from './Hamburger'
+import { Wrapper, Title } from './style'
 
 export default function TopBar() {
   return (
-    <div>
-      <div>FeGomes Podcast</div>
-      <div>
+    <Wrapper>
+      <Title>FeGomes Podcast</Title>
+      <Hamburger>
         <Button to="/como-funciona" hollow>
           Como funciona
         </Button>
@@ -15,7 +17,7 @@ export default function TopBar() {
           Sobre
         </Button>
         <Button to="/contato">Contato</Button>
-      </div>
-    </div>
+      </Hamburger>
+    </Wrapper>
   )
 }
