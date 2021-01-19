@@ -31,6 +31,8 @@ const size = {
 const numbers = {
   radius: 0,
   menuHeight: 50,
+  width: '700px',
+  section: '1000px',
 }
 
 export interface ThemeProps {
