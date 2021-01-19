@@ -3,6 +3,8 @@ import Hero from '@components/atoms/Hero'
 import Section from '@components/atoms/Section'
 import Footer from '@components/atoms/Footer'
 import { Wrapper } from './styles'
+import Mosaic from '@components/atoms/Mosaic'
+import Card from '@components/atoms/Card'
 
 export default function Home() {
   return (
@@ -17,74 +19,79 @@ export default function Home() {
         main
       ></Hero>
       <Section title="Projetos de destaque" bg="clear">
-        <div>
+        <Mosaic>
           {/* Mosaic */}
-          <div>
-            <p>Imagem</p>
-            <h3>Projeto 1</h3>
-            <p>Lead</p>
-            <button>Saiba mais</button>
-          </div>
-          <div>
-            <p>Imagem</p>
-            <h3>Projeto 1</h3>
-            <p>Lead</p>
-            <button>Saiba mais</button>
-          </div>
-          <div>
-            <p>Imagem</p>
-            <h3>Projeto 1</h3>
-            <p>Lead</p>
-            <button>Saiba mais</button>
-          </div>
-        </div>
+          <Card
+            image="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            title="Projeto 1"
+            lead="suscipit accusamus laborum odit ipsum eos minima autem libero similique ipsam neq"
+            to="buttonpath"
+          />
+          <Card
+            image="https://images.unsplash.com/photo-1572177812156-58036aae439c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            title="Projeto 2"
+            lead="suscipit accusamus laborum odit ipsum eos minima autem libero similique ipsam neq"
+            to="buttonpath"
+          />
+          <Card
+            image="https://images.unsplash.com/photo-1586281380117-5a60ae2050cc?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80"
+            title="Projeto 2"
+            lead="suscipit accusamus laborum odit ipsum eos minima autem libero similique ipsam neq"
+            to="buttonpath"
+          />
+        </Mosaic>
       </Section>
       <Section title="Nossos podcasts" bg="clear">
-        <div>
-          <p>Imagem</p>
-          <h3>Projeto 1</h3>
-          <p>Lead</p>
-          <button>Saiba mais</button>
-        </div>
-        <div>
-          <p>Imagem</p>
-          <h3>Projeto 1</h3>
-          <p>Lead</p>
-          <button>Saiba mais</button>
-        </div>
-        <div>
-          <p>Imagem</p>
-          <h3>Projeto 1</h3>
-          <p>Lead</p>
-          <button>Saiba mais</button>
-        </div>
+        <Mosaic>
+          {/* Mosaic */}
+          <Card
+            square
+            image="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            to="buttonpath"
+            alt="Nome do projeto"
+          />
+          <Card
+            square
+            image="https://images.unsplash.com/photo-1572177812156-58036aae439c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            to="buttonpath"
+            alt="Nome do projeto"
+          />
+          <Card
+            square
+            image="https://images.unsplash.com/photo-1586281380117-5a60ae2050cc?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80"
+            to="buttonpath"
+            alt="Nome do projeto"
+          />
+        </Mosaic>
       </Section>
       <Section title="Como funciona" bg="clear">
-        <div>
-          <p>Ícone</p>
-          <h3>Tratamento</h3>
-          <p>Lead</p>
-          <button>Saiba mais</button>
-        </div>
-        <div>
-          <p>Ícone</p>
-          <h3>Edição</h3>
-          <p>Lead</p>
-          <button>Saiba mais</button>
-        </div>
-        <div>
-          <p>Ícone</p>
-          <h3>Sonorização</h3>
-          <p>Lead</p>
-          <button>Saiba mais</button>
-        </div>
+        <Mosaic>
+          <Card
+            icon="treatment"
+            title="Tratamento"
+            lead="suscipit accusamus laborum odit ipsum eos minima autem libero similique ipsam neq"
+            to="buttonpath"
+          />
+          <Card
+            icon="edit"
+            title="Edição"
+            lead="suscipit accusamus laborum odit ipsum eos minima autem libero similique ipsam neq"
+            to="buttonpath"
+          />
+          <Card
+            icon="sound"
+            title="Sonorização"
+            lead="suscipit accusamus laborum odit ipsum eos minima autem libero similique ipsam neq"
+            to="buttonpath"
+          />
+        </Mosaic>
       </Section>
       <Hero
         title="Vamos trabalhar juntos?"
-        lead="lead"
-        button="Contato"
+        // lead="lead"
+        button="Entre em contato!"
         to="/contato"
-        bg=""
+        bg="https://images.unsplash.com/photo-1520444451380-ebe0f7b9cfd5?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80"
       />
       <Footer
         title="FeGomes Podcast"

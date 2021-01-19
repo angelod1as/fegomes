@@ -1,5 +1,8 @@
 const color = {
-  color: '#333333',
+  dark: '#041F60',
+  main: '#0476D0',
+  light: '#2CEEF0',
+  lighter: '#B4F5F0',
   white: '#FFFFFF',
   black: '#000000',
   gray: '#CCCCCC',
@@ -31,6 +34,8 @@ const size = {
 const numbers = {
   radius: 0,
   menuHeight: 50,
+  width: '700px',
+  section: '1000px',
 }
 
 export interface ThemeProps {

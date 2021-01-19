@@ -44,7 +44,7 @@ export const Wrapper = styled.a<{ embed: boolean }>`
 `
 
 export const ImageWrapper = styled.div`
-  background-color: ${p => p.theme.color.black};
+  background-color: ${p => p.theme.color.dark};
 `
 
 export const Image = styled.img`
@@ -56,7 +56,7 @@ export const Image = styled.img`
   height: auto;
 `
 export const ImageNotFound = styled.div`
-  background-color: ${p => p.theme.color.black};
+  background-color: ${p => p.theme.color.dark};
   width: 100%;
   height: 100%;
   display: flex;
@@ -73,7 +73,7 @@ export const H3 = styled.h3`
   font-size: 21px;
   line-height: 25px;
   margin: 15px 0 0 0;
-  ${p => p.theme.color.black};
+  ${p => p.theme.color.main};
   transition: opacity 0.2s ease;
 `
 

@@ -12,13 +12,13 @@ export const StyledButton = styled.button<{ hollow: boolean }>`
   transition: color 0.2s;
 
   &:hover {
-    color: ${p => p.theme.color.black};
+    color: ${p => p.theme.color.main};
   }
 
   ${p =>
     !p.hollow
       ? css`
-          background-color: ${p => p.theme.color.black};
+          background-color: ${p => p.theme.color.main};
           padding: 15px 20px;
           color: ${p => p.theme.color.white};
 
@@ -26,7 +26,7 @@ export const StyledButton = styled.button<{ hollow: boolean }>`
 
           &:hover {
             color: ${p => p.theme.color.white};
-            background-color: ${p => p.theme.color.darkergray};
+            background-color: ${p => p.theme.color.dark};
           }
         `
       : ''}

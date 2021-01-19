@@ -24,7 +24,7 @@ const GlobalStyle = createGlobalStyle<GlobalProps>`
     box-sizing: border-box;
     &:focus {
       outline-offset: 3px;
-      outline: ${p => p.theme.color.black} auto 1px;
+      outline: ${p => p.theme.color.main} auto 1px;
     }
   }
 
@@ -66,17 +66,18 @@ const GlobalStyle = createGlobalStyle<GlobalProps>`
   h3 {
     font-size: 20px;
     line-height: 35px;
+    color: ${p => p.theme.color.main}
   }
 
   a {
     display: inline-block;
-    color: ${p => p.theme.color.black};
+    color: ${p => p.theme.color.main};
     font-weight: ${p => p.theme.font.weight.medium};
     transition: all .2s;
     text-decoration: underline;
     &:hover {
       text-decoration: none;
-      color: ${p => p.theme.color.black};
+      color: ${p => p.theme.color.dark};
     }
   }
   &.bg {
