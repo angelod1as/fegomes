@@ -95,7 +95,7 @@ export default function Home() {
       />
       <Footer
         title="FeGomes Podcast"
-        lead="lorem"
+        lead="lorem ipsum dolor sit amet"
         social={[
           {
             social: 'facebook',

@@ -1,4 +1,16 @@
 import { nanoid } from 'nanoid'
+import { Wrapper, Social, BottomBar } from './styles'
+import {
+  FaFacebook,
+  FaInstagram,
+  FaLinkedin,
+  FaSoundcloud,
+  FaTelegram,
+  FaTwitch,
+  FaTwitter,
+  FaWhatsapp,
+} from 'react-icons/fa'
+import { useCallback } from 'react'
 
 interface Social {
   social: string
@@ -13,19 +25,42 @@ interface FooterProps {
 }
 
 export default function Footer({ title, lead, social }: FooterProps) {
+  const getSocial = useCallback(each => {
+    switch (each.social) {
+      case 'facebook':
+        return <FaFacebook size={20} />
+      case 'twitter':
+        return <FaTwitter size={20} />
+      case 'instagram':
+        return <FaInstagram size={20} />
+      case 'linkedin':
+        return <FaLinkedin size={20} />
+      case 'soundcloud':
+        return <FaSoundcloud size={20} />
+      case 'twitch':
+        return <FaTwitch size={20} />
+      case 'whatsapp':
+        return <FaWhatsapp size={20} />
+      case 'telegram':
+        return <FaTelegram size={20} />
+      default:
+        return <div />
+    }
+  }, [])
+
   return (
-    <div>
+    <Wrapper>
       <h3>{title}</h3>
-      <p>{lead}</p>
+      {lead && <p>{lead}</p>}
       {social && (
-        <div>
+        <Social>
           {social.map((each: Social) => {
-            return <p key={nanoid()}>{each.social}</p>
+            return <div key={nanoid()}>{getSocial(each)}</div>
           })}
-        </div>
+        </Social>
       )}
-      <div>
-        <div>© 2020 FeGomes. Todos os direitos reservados</div>
+      <BottomBar>
+        <div>© 2021 FeGomes. Todos os direitos reservados</div>
         <div>
           <a
             href="https://www.angelodias.com.br"
@@ -35,7 +70,7 @@ export default function Footer({ title, lead, social }: FooterProps) {
             Desenvolvido por Angelo Dias
           </a>
         </div>
-      </div>
-    </div>
+      </BottomBar>
+    </Wrapper>
   )
 }
