@@ -6,7 +6,7 @@ Made using Typescript, React, [Next.js](https://nextjs.org/), [Vercel](https://v
 
 ## Like what you see?	
 
-I'm open for hire.	
+I'm open for hire
 
 JS, TS, React, Redux, and more. Hit me on [oiangelodias\[at\]gmail.com](mailto:oiangelodias@gmail.com).	
 
