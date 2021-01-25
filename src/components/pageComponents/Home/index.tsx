@@ -2,7 +2,6 @@ import Hero from '@components/atoms/Hero'
 import Section from '@components/atoms/Section'
 import Mosaic from '@components/atoms/Mosaic'
 import Card from '@components/atoms/Card'
-import Container from '@pageComponents/container'
 
 export default function Home() {
   return (

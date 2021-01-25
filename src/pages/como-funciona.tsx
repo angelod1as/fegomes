@@ -1,5 +1,11 @@
+import How from '@pageComponents/How'
+
 export default function ComoFunciona() {
-  return <div>oi</div>
+  return (
+    <>
+      <How />
+    </>
+  )
 }
 
 // export async function getStaticProps({ locale }) {

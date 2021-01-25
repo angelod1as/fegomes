@@ -4,7 +4,7 @@ import { theme } from '@styles/theme'
 import GlobalStyle from '@styles/GlobalStyle'
 import Head from 'next/head'
 import { useState } from 'react'
-import Container from '@pageComponents/container'
+import Container from '@components/atoms/Container'
 
 function App({ Component, pageProps }: AppProps) {
   // TODO: Loading

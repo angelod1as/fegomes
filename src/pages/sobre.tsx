@@ -1,5 +1,11 @@
+import About from '@pageComponents/About'
+
 export default function Sobre() {
-  return <div>oi</div>
+  return (
+    <>
+      <About />
+    </>
+  )
 }
 
 // export async function getStaticProps({ locale }) {

@@ -1,5 +1,5 @@
 // import fetchContentful from '@functions/fetchContentful'
-import Contact from '@pageComponents/contact/index'
+import Contact from '@pageComponents/Contact/index'
 
 export default function Contato() {
   return (

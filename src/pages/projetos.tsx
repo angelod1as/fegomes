@@ -1,5 +1,11 @@
+import Projects from '@pageComponents/Projects/index'
+
 export default function Projetos() {
-  return <div>oi</div>
+  return (
+    <>
+      <Projects />
+    </>
+  )
 }
 
 // export async function getStaticProps({ locale }) {

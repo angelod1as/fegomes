@@ -7,7 +7,7 @@ interface HeroProps {
   lead?: string
   button?: string
   to?: string
-  backgroundImage: string
+  backgroundImage?: string
   main?: boolean
   children?: ReactNode
   className?: string
@@ -26,7 +26,7 @@ export default function Hero({
 
   return (
     <Wrapper backgroundImage={backgroundImage}>
-      <Filter />
+      {backgroundImage && <Filter />}
       <Holder>
         {title && <TitleHolder>{titleTag}</TitleHolder>}
         {lead && <Lead>{lead}</Lead>}
