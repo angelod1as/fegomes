@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const Wrapper = styled.div<{ bg: string }>`
+export const Wrapper = styled.div`
   padding: 50px 0;
   margin: 0 auto;
   max-width: ${p => p.theme.numbers.section};
