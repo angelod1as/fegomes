@@ -2,8 +2,7 @@ import styled, { css } from 'styled-components'
 
 export const Wrapper = styled.div<{ backgroundImage: string }>`
   width: 100%;
-  height: 700px;
-  max-height: 100vh;
+  min-height: 800px;
   display: flex;
   flex-direction: column;
   align-items: center;

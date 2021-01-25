@@ -10,6 +10,7 @@ interface HeroProps {
   backgroundImage: string
   main?: boolean
   children?: ReactNode
+  className?: string
 }
 
 export default function Hero({

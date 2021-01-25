@@ -4,6 +4,7 @@ import { theme } from '@styles/theme'
 import GlobalStyle from '@styles/GlobalStyle'
 import Head from 'next/head'
 import { useState } from 'react'
+import Container from '@pageComponents/container'
 
 function App({ Component, pageProps }: AppProps) {
   // TODO: Loading
@@ -14,8 +15,10 @@ function App({ Component, pageProps }: AppProps) {
       <FirstHead />
       <ThemeProvider theme={theme}>
         <GlobalStyle />
-        {loading && <div>LOADING</div>}
-        <Component {...pageProps} />
+        <Container>
+          {loading && <div>LOADING</div>}
+          <Component {...pageProps} />
+        </Container>
       </ThemeProvider>
     </>
   )
