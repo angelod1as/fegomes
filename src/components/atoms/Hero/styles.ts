@@ -1,6 +1,6 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
-export const Wrapper = styled.div<{ bg: string }>`
+export const Wrapper = styled.div<{ backgroundImage: string }>`
   width: 100%;
   height: 700px;
   max-height: 100vh;
@@ -11,9 +11,13 @@ export const Wrapper = styled.div<{ bg: string }>`
   background-color: ${p => p.theme.color.gray};
   color: ${p => p.theme.color.white};
 
-  background-image: url(${p => p.bg});
-  background-position: left center;
-  background-size: cover;
+  ${p =>
+    p.backgroundImage &&
+    css`
+      background-image: url(${p.backgroundImage});
+      background-position: left center;
+      background-size: cover;
+    `}
 
   position: relative;
   z-index: 0;

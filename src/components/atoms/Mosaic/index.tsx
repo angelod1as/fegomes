@@ -3,7 +3,7 @@ import { StyledMosaic, SeeMore } from './styles'
 
 interface MosaicProps {
   children: ReactNode
-  limit: boolean
+  limit?: boolean
 }
 
 export default function Mosaic({ children, limit }: MosaicProps) {

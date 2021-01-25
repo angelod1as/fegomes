@@ -5,6 +5,7 @@ import Footer from '@components/atoms/Footer'
 import { Wrapper } from './styles'
 import Mosaic from '@components/atoms/Mosaic'
 import Card from '@components/atoms/Card'
+import Contact from '@components/atoms/Contact'
 
 export default function Home() {
   return (
@@ -15,9 +16,9 @@ export default function Home() {
         lead="Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum minus, saepe architecto odit ducimusa"
         button="Saiba mais"
         to="/projetos"
-        bg="https://images.unsplash.com/photo-1544719576-904e2d01e057?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1376&q=80"
+        backgroundImage="https://images.unsplash.com/photo-1544719576-904e2d01e057?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1376&q=80"
         main
-      ></Hero>
+      />
       <Section title="Projetos de destaque" bg="clear">
         <Mosaic>
           {/* Mosaic */}
@@ -159,11 +160,12 @@ export default function Home() {
       </Section>
       <Hero
         title="Vamos trabalhar juntos?"
-        // lead="lead"
-        button="Entre em contato!"
-        to="/contato"
-        bg="https://images.unsplash.com/photo-1520444451380-ebe0f7b9cfd5?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80"
-      />
+        backgroundImage="https://images.unsplash.com/photo-1520444451380-ebe0f7b9cfd5?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80"
+        main
+      >
+        <Contact />
+      </Hero>
+
       <Footer
         title="FeGomes Podcast"
         lead="lorem ipsum dolor sit amet"
