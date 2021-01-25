@@ -5,7 +5,7 @@ import { Together, Wrapper } from './styles'
 
 const config = {
   script:
-    'https://script.google.com/macros/s/AKfycbwMxYDrufp73bKdU8gMvxFDdHRuzcR4IKQUB33B7GqwyfyZS04/exec',
+    'https://script.google.com/macros/s/AKfycbwceq7GmWzFq5jkBh1FTMA69JZLKYoVOfri5LSpAmX3TF4JefbyE8Av/exec',
   sheet: 'responses',
   // email: '',
 }

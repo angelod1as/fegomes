@@ -3,8 +3,13 @@ import TopBar from '@components/atoms/TopBar'
 import Footer from '@components/atoms/Footer'
 import Contact from '@components/atoms/Contact'
 import Hero from '@components/atoms/Hero'
+import { ReactNode } from 'react'
 
-export default function Container({ children }) {
+interface ContainerProps {
+  children?: ReactNode
+}
+
+export default function Container({ children }: ContainerProps) {
   return (
     <Wrapper>
       <TopBar />

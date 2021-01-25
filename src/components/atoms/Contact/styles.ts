@@ -20,9 +20,15 @@ export const Wrapper = styled.div`
   label {
     font-weight: ${p => p.theme.font.weight.medium};
   }
+
+  button {
+    margin-top: 10px;
+  }
 `
 
 export const Together = styled.div`
-  display: flex;
-  gap: 20px;
+  @media ${p => p.theme.size.small} {
+    display: flex;
+    gap: 20px;
+  }
 `
