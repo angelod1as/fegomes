@@ -10,7 +10,7 @@ export default function About() {
         lead="Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum minus, saepe architecto odit ducimusa"
         main
       />
-      <Section bg="clear">
+      <Section>
         <Content>
           <img
             src="https://pbs.twimg.com/profile_images/1220072412869537792/7md-iaev_400x400.jpg"
