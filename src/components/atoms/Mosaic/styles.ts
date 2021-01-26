@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 
 export const Wrapper = styled.div`
   position: relative;
@@ -8,14 +8,14 @@ export const Wrapper = styled.div`
   }
 `
 
-export const StyledMosaic = styled.div`
-  display: grid;
+export const StyledMosaic = styled.div<{ height: string }>`
+  /* display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   align-items: center;
   justify-content: center;
   grid-gap: 20px;
-  overflow: hidden;
-  transition: max-height 0.3s;
+  transition: max-height 0.3s; */
+  height: ${p => p.height};
 `
 
 export const SeeMore = styled.div`
