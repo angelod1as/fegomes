@@ -21,19 +21,19 @@ export default function Home() {
             image="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
             title="Projeto 1"
             lead="suscipit accusamus laborum odit ipsum eos minima autem libero similique ipsam neq"
-            to="buttonpath"
+            to="projetos/projeto-1"
           />
           <Card
             image="https://images.unsplash.com/photo-1572177812156-58036aae439c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
             title="Projeto 2"
             lead="suscipit accusamus laborum odit ipsum eos minima autem libero similique ipsam neq"
-            to="buttonpath"
+            to="projeto-2"
           />
           <Card
             image="https://images.unsplash.com/photo-1586281380117-5a60ae2050cc?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80"
             title="Projeto 2"
             lead="suscipit accusamus laborum odit ipsum eos minima autem libero similique ipsam neq"
-            to="buttonpath"
+            to="projeto-3"
           />
         </Mosaic>
       </Section>

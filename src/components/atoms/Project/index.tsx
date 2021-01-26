@@ -1,62 +1,34 @@
-import Link from 'next/link'
-import {
-  Wrapper,
-  Image,
-  ImageWrapper,
-  Caption,
-  H3,
-  Lead,
-  ImageNotFound,
-  Small,
-} from './styles'
-import { VscWarning } from 'react-icons/vsc'
-import { useRouter } from 'next/router'
-import makeSafeDate from '@components/utils/makeSafeDate'
-
-export interface ImageProps {
-  url: string
-}
-
-export interface ProjectProps {
-  image: ImageProps[]
-  title: string
-  lead: string
-  date: string
-  to: string
-  embed?: boolean
-}
+import Embed from '../Embed'
+import { Description, Side, Title, Wrapper, Image, Tag } from './styles'
 
 export default function Project({
   image,
   title,
-  lead,
-  date,
-  to,
+  description,
   embed,
-}: ProjectProps) {
-  const { locale } = useRouter()
-
+  current = undefined,
+}) {
+  current = true
   return (
-    <Link href={`/projects/${to}`}>
-      <Wrapper {...{ embed }}>
-        <ImageWrapper>
-          {image ? (
-            image.length > 0 && <Image src={image[0].url} alt="" />
-          ) : (
-            <ImageNotFound>
-              <VscWarning size={30} color="white" />
-            </ImageNotFound>
-          )}
-        </ImageWrapper>
-        <Caption>
-          <H3>{title}</H3>
-          <Lead>
-            {lead && lead !== '-tile' && lead}{' '}
-            <span>{makeSafeDate(date, locale)}</span>
-          </Lead>
-          {embed && <Small>click to visit</Small>}
-        </Caption>
-      </Wrapper>
-    </Link>
+    <Wrapper>
+      <Image image="https://images.unsplash.com/photo-1572177812156-58036aae439c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"></Image>
+      <Side>
+        {current !== undefined ? (
+          <Tag current={current}>
+            {current ? 'Anda comigo' : 'Já andou comigo'}
+          </Tag>
+        ) : (
+          ''
+        )}
+        <Title>Título</Title>
+        <Description>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
+          tempora error voluptate a distinctio amet recusandae. Nihil quaerat
+          nostrum, corporis quasi possimus enim in delectus, dolores laboriosam
+          illum natus repellendus!
+        </Description>
+        <Embed embed={'<div>embed</div>'}></Embed>
+      </Side>
+    </Wrapper>
   )
 }

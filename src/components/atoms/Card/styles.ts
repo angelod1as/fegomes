@@ -9,7 +9,6 @@ export const Image = styled.div<{ image: string; square: boolean }>`
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  margin-bottom: 20px;
 `
 
 export const Icon = styled.div`
@@ -33,6 +32,7 @@ export const Wrapper = styled.div`
   height: 100%;
   cursor: pointer;
   transition: opacity 0.3s ease;
+  position: relative;
 
   h3 {
     margin: 15px 0 10px 0;
@@ -45,4 +45,18 @@ export const Wrapper = styled.div`
   &:hover {
     opacity: 0.7;
   }
+`
+
+export const Current = styled.div<{ current: boolean }>`
+  width: 13px;
+  height: 13px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  border-radius: 50%;
+
+  border: 1px solid ${p => p.theme.color.gray};
+
+  background-color: ${p =>
+    p.current ? p.theme.color.main : p.theme.color.darkergray};
 `
