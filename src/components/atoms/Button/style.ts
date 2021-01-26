@@ -10,6 +10,7 @@ export const StyledButton = styled.button<StyledButtonProps>`
   padding: 0;
   border: 0;
   background: transparent;
+  border-radius: ${p => p.theme.numbers.radius};
 
   font-weight: ${p => p.theme.font.weight.medium};
   color: ${p => p.theme.color.darkergray};

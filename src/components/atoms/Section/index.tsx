@@ -3,7 +3,6 @@ import { Title, Wrapper, Container } from './styles'
 
 interface SectionProps {
   title?: string
-  bg?: string
   children: ReactNode
 }
 
