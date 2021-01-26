@@ -14,7 +14,7 @@ export default function Home() {
         backgroundImage="https://images.unsplash.com/photo-1544719576-904e2d01e057?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1376&q=80"
         main
       />
-      <Section title="Projetos de destaque" bg="clear">
+      <Section title="Projetos de destaque">
         <Mosaic>
           {/* Mosaic */}
           <Card
@@ -37,7 +37,7 @@ export default function Home() {
           />
         </Mosaic>
       </Section>
-      <Section title="Nossos podcasts" bg="clear">
+      <Section title="Nossos podcasts">
         <Mosaic limit>
           <Card
             square
@@ -131,7 +131,7 @@ export default function Home() {
           />
         </Mosaic>
       </Section>
-      <Section title="Como funciona" bg="clear">
+      <Section title="Como funciona">
         <Mosaic>
           <Card
             icon="treatment"

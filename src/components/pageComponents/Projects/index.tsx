@@ -9,7 +9,7 @@ export default function Projects() {
         lead="Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum minus, saepe architecto odit ducimusa"
         main
       />
-      <Section title="Projetos de destaque" bg="clear">
+      <Section title="Projetos de destaque">
         <div>oi</div>
       </Section>
     </>
