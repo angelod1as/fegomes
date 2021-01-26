@@ -4,6 +4,7 @@ import Footer from '@components/atoms/Footer'
 import Contact from '@components/atoms/Contact'
 import Hero from '@components/atoms/Hero'
 import { ReactNode } from 'react'
+import Separator from '@components/atoms/Separator'
 
 interface ContainerProps {
   children?: ReactNode
@@ -13,6 +14,7 @@ export default function Container({ children }: ContainerProps) {
   return (
     <Wrapper>
       <TopBar />
+      <Separator h={50}></Separator>
 
       {children}
 

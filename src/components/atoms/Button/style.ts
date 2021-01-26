@@ -1,10 +1,16 @@
 import styled, { css } from 'styled-components'
 
-export const StyledButton = styled.button<{ hollow: boolean }>`
+interface StyledButtonProps {
+  hollow: boolean
+  selected: boolean
+}
+
+export const StyledButton = styled.button<StyledButtonProps>`
   cursor: pointer;
   padding: 0;
   border: 0;
   background: transparent;
+  border-radius: ${p => p.theme.numbers.radius};
 
   font-weight: ${p => p.theme.font.weight.medium};
   color: ${p => p.theme.color.darkergray};
@@ -30,4 +36,20 @@ export const StyledButton = styled.button<{ hollow: boolean }>`
           }
         `
       : ''}
+
+  ${p =>
+    p.selected &&
+    (p.hollow
+      ? css`
+          color: ${p => p.theme.color.main};
+          &:hover {
+            color: ${p => p.theme.color.black};
+          }
+        `
+      : css`
+          background-color: ${p => p.theme.color.dark};
+          &:hover {
+            background-color: ${p => p.theme.color.black};
+          }
+        `)}
 `

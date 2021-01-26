@@ -2,22 +2,27 @@ import styled, { css } from 'styled-components'
 
 export const Wrapper = styled.div<{ backgroundImage: string }>`
   width: 100%;
-  height: 700px;
-  max-height: 100vh;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: ${p => p.theme.color.gray};
-  color: ${p => p.theme.color.white};
+  padding-top: 100px;
 
   ${p =>
-    p.backgroundImage &&
-    css`
-      background-image: url(${p.backgroundImage});
-      background-position: left center;
-      background-size: cover;
-    `}
+    p.backgroundImage
+      ? css`
+          color: ${p => p.theme.color.white};
+          min-height: 800px;
+          background-color: ${p => p.theme.color.gray};
+          background-image: url(${p.backgroundImage});
+          background-position: left center;
+          background-size: cover;
+        `
+      : css`
+          color: ${p => p.theme.color.black};
+          /* min-height: 400px; */
+        `}
 
   position: relative;
   z-index: 0;
@@ -46,7 +51,7 @@ export const Holder = styled.div`
   margin: 0 15px;
   text-align: center;
 
-  max-width: 500px;
+  max-width: 460px;
   z-index: 20;
 `
 

@@ -1,10 +1,9 @@
-// import fetchContentful from '@functions/fetchContentful'
-import Contact from '@pageComponents/Contact/index'
+import About from '@pageComponents/About'
 
-export default function Contato() {
+export default function Sobre() {
   return (
     <>
-      <Contact />
+      <About />
     </>
   )
 }

@@ -1,5 +1,5 @@
 // import fetchContentful from '@functions/fetchContentful'
-import Home from '@pageComponents/home/index'
+import Home from '@pageComponents/Home/index'
 
 export default function Index() {
   return (

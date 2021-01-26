@@ -2,11 +2,10 @@ import Hero from '@components/atoms/Hero'
 import Section from '@components/atoms/Section'
 import Mosaic from '@components/atoms/Mosaic'
 import Card from '@components/atoms/Card'
-import Container from '@pageComponents/container'
 
 export default function Home() {
   return (
-    <Container>
+    <>
       <Hero
         title="Transforme seu projeto em realidade"
         lead="Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum minus, saepe architecto odit ducimusa"
@@ -154,6 +153,6 @@ export default function Home() {
           />
         </Mosaic>
       </Section>
-    </Container>
+    </>
   )
 }

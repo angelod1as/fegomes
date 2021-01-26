@@ -32,7 +32,7 @@ const size = {
 }
 
 const numbers = {
-  radius: 0,
+  radius: '5px',
   menuHeight: 50,
   width: '700px',
   section: '1000px',
