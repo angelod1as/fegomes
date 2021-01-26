@@ -16,7 +16,7 @@ export default function Waveform({ played = 0, clientWidth }: WaveFormProps) {
   useEffect(() => {
     const makeBars = Array.from({ length: barNumber }, () => {
       const number = Math.random()
-      let final = height * number
+      let final = Math.round((height * number) / 10) * 10
       if (final < 20) {
         final += 20
       }
@@ -29,12 +29,12 @@ export default function Waveform({ played = 0, clientWidth }: WaveFormProps) {
     <Wrapper height={height}>
       <Lower>
         {bars.map(itemHeight => {
-          return <Wave height={itemHeight} key={nanoid()} />
+          return <Wave style={{ height: itemHeight }} key={nanoid()} />
         })}
       </Lower>
       <Upper clip={played * 100}>
         {bars.map(itemHeight => {
-          return <Wave height={itemHeight} key={nanoid()} />
+          return <Wave style={{ height: itemHeight }} key={nanoid()} />
         })}
       </Upper>
     </Wrapper>

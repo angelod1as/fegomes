@@ -18,9 +18,14 @@ export const Wrapper = styled.div<{ height: number }>`
   }
 `
 
-export const Wave = styled.div<{ height: number }>`
+interface WaveProps {
+  style: {
+    height: number
+  }
+}
+
+export const Wave = styled.div<WaveProps>`
   width: 100%;
-  height: ${p => p.height}px;
   border-radius: ${p => p.theme.numbers.radius};
 `
 
