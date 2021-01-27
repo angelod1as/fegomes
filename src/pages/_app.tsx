@@ -41,53 +41,42 @@ function FirstHead() {
       <link rel="manifest" href="/manifest.webmanifest"></link>
       {/* META */}
       {/* Primary Meta Tags */}
-      <title key="title">I'm Angelo and I do stuff</title>
-      <meta name="title" key="meta-title" content="I'm Angelo and I do stuff" />
+      <title key="title">FeGomes Podcast</title>
+      <meta name="title" key="meta-title" content="FeGomes Podcast" />
       <meta
         name="description"
         key="meta-description"
-        content="Coding, design, writing & much more at this portfolio website"
+        content="Tratamento, edição e sonorização de áudio"
       />
       {/* Open Graph / Facebook */}
       <meta property="og:type" content="website" />
-      <meta property="og:url" content="https://angelodias.com.br" />
-      <meta
-        property="og:title"
-        key="og:title"
-        content="I'm Angelo and I do stuff"
-      />
+      <meta property="og:url" content="https://fegomes.com.br" />
+      <meta property="og:title" key="og:title" content="FeGomes Podcast" />
       <meta
         property="og:description"
         key="og:description"
-        content="Coding, design, writing & much more at this portfolio website"
+        content="Tratamento, edição e sonorização de áudio"
       />
       <meta
         property="og:image"
-        content="https://res.cloudinary.com/angelodias/image/upload/v1608995567/portfolio/tiles/social_xlptmf.png"
+        content="https://res.cloudinary.com/femaxpe/image/upload/v1611773626/Novo_Projeto_zgbxuy.png"
       />
       {/* Twitter */}
       <meta property="twitter:card" content="summary_large_image" />
-      <meta property="twitter:url" content="https://angelodias.com.br" />
-      <meta
-        property="twitter:title"
-        key="tw:title"
-        content="I'm Angelo and I do stuff"
-      />
+      <meta property="twitter:url" content="https://fegomes.com.br" />
+      <meta property="twitter:title" key="tw:title" content="FeGomes Podcast" />
       <meta
         property="twitter:description"
         key="tw:description"
-        content="Coding, design, writing & much more at this portfolio website"
+        content="Tratamento, edição e sonorização de áudio"
       />
       <meta
         property="twitter:image"
-        content="https://res.cloudinary.com/angelodias/image/upload/v1608995567/portfolio/tiles/social_xlptmf.png"
+        content="https://res.cloudinary.com/femaxpe/image/upload/v1611773626/Novo_Projeto_zgbxuy.png"
       />
-      <meta
-        name="keywords"
-        content="portfolio, coding, writing, design, programming, angelo, dias, react, node, javascript, typescript"
-      />
+      <meta name="keywords" content="portfolio, podcast, audio, editing" />
       <meta name="author" content="Angelo Dias <oiangelodias@gmail.com>" />
-      <meta name="url" content="https://angelodias.com.br" />
+      <meta name="url" content="https://fegomes.com.br" />
     </Head>
   )
 }

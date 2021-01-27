@@ -1,7 +1,7 @@
 import Project from '@components/atoms/Project'
 import { fetchContent } from '@functions/fetchGraphQL'
+import { ProjectQueryProps } from '@interfaces/query'
 import NotFound from '@pageComponents/NotFound'
-import { ProjectQueryProps } from '@pages/projetos'
 
 export default function ProjectPage({ project }) {
   if (project) {
