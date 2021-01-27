@@ -4,7 +4,7 @@ import hljs from 'highlight.js/lib/core'
 import javascript from 'highlight.js/lib/languages/javascript'
 import { nanoid } from 'nanoid'
 
-import { IProject } from 'src/@types/generated/contentful'
+import { IProject } from 'src/types/generated/contentful'
 
 import { NodeProps } from '../index'
 import Link from 'next/link'

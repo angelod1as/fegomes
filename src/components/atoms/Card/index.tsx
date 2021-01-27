@@ -7,7 +7,7 @@ interface CardProps {
   icon?: string
   image?: string
   title?: string
-  lead?: string
+  description?: string
   to?: string
   square?: boolean
   alt?: string
@@ -17,7 +17,7 @@ interface CardProps {
 export default function Card({
   icon,
   title,
-  lead,
+  description,
   image,
   to,
   alt,
@@ -51,7 +51,7 @@ export default function Card({
           />
         )}
         {title && <h3>{title}</h3>}
-        {lead && <p>{lead}</p>}
+        {description && <p>{description}</p>}
       </Wrapper>
     </Link>
   )

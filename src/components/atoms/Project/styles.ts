@@ -1,17 +1,19 @@
 import styled from 'styled-components'
 
 export const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
   margin-bottom: 100px;
   max-width: 1100px;
   margin-left: auto;
   margin-right: auto;
 
   @media ${p => p.theme.size.small} {
-    flex-direction: row;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 320px minmax(320px, 1fr);
+  }
+
+  @media ${p => p.theme.size.medium} {
+    grid-template-columns: 500px minmax(500px, 1fr);
   }
 `
 
@@ -29,10 +31,10 @@ export const Image = styled.div<{ image: string }>`
   }
   @media ${p => p.theme.size.small} {
     flex: 1;
-    max-width: 300px;
-    max-height: 300px;
-    width: 300px;
-    height: 300px;
+    max-width: 320px;
+    max-height: 320px;
+    width: 320px;
+    height: 320px;
     align-self: flex-start;
   }
   @media ${p => p.theme.size.medium} {
@@ -45,7 +47,6 @@ export const Image = styled.div<{ image: string }>`
 `
 
 export const Side = styled.div`
-  padding: 0 20px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;

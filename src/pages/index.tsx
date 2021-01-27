@@ -10,7 +10,16 @@ export default function Index() {
 }
 
 // export async function getStaticProps({ locale }) {
-//   const items = await fetchContentful({ type: 'tile', locale })
+//   // const items = await fetchContentful({ type: 'tile', locale })
+//   const items = await fetchContent(`
+//   query {
+//     projectCollection {
+//       items {
+//         title
+//       }
+//     }
+//     }
+//   `)
 
 //   return {
 //     props: {

@@ -1,6 +1,6 @@
 import Embed from '@components/atoms/Embed'
 import Video from '@components/atoms/Video'
-import { ICloudinary, IEmbed } from 'src/@types/generated/contentful'
+import { ICloudinary, IEmbed } from 'src/types/generated/contentful'
 import { Mosaic, Figure } from './styles'
 
 const handleEmbedded = (node: { data: { target: any } }) => {

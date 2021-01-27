@@ -5,46 +5,13 @@ import Section from '@components/atoms/Section'
 import { nanoid } from 'nanoid'
 import slugify from 'slugify'
 import { Legend } from './style'
+import { ProjectProps } from '@pages/projetos'
 
-const proj = [
-  {
-    title: 'Proj1',
-    lead: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-    current: true,
-    img:
-      'https://images.unsplash.com/photo-1572177812156-58036aae439c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
-  },
-  {
-    title: 'Proj2',
-    lead: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-    current: true,
-    img:
-      'https://images.unsplash.com/photo-1572177812156-58036aae439c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
-  },
-  {
-    title: 'Proj3',
-    lead: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-    current: false,
-    img:
-      'https://images.unsplash.com/photo-1572177812156-58036aae439c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
-  },
-  {
-    title: 'Proj4',
-    lead: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-    current: false,
-    img:
-      'https://images.unsplash.com/photo-1572177812156-58036aae439c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
-  },
-  {
-    title: 'Proj5',
-    lead: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-    current: false,
-    img:
-      'https://images.unsplash.com/photo-1572177812156-58036aae439c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
-  },
-]
+interface ProjectsCompProps {
+  projects: ProjectProps[]
+}
 
-export default function Projects() {
+export default function Projects({ projects }: ProjectsCompProps) {
   return (
     <>
       <Hero
@@ -64,13 +31,13 @@ export default function Projects() {
           </div>
         </Legend>
         <Mosaic>
-          {proj.map(each => (
+          {projects.map((each: ProjectProps) => (
             <Card
               key={nanoid()}
-              image={each.img}
+              image={each.image.cloudinary[0].url}
               title={each.title}
-              lead={each.lead}
-              to={`/projetos/${slugify(each.title)}`}
+              description={each.description}
+              to={`/projetos/${slugify(each.title, { lower: true })}`}
               current={each.current}
             />
           ))}
