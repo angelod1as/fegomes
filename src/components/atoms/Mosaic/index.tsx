@@ -7,7 +7,7 @@ interface MosaicProps {
   limit?: boolean
 }
 
-export default function Mosaic({ children }) {
+export default function Mosaic({ limit, children }: MosaicProps) {
   const [height, setHeight] = useState<number | string>(500)
 
   const handleClick = useCallback(() => {
@@ -18,14 +18,22 @@ export default function Mosaic({ children }) {
     <Wrapper>
       <Collapse isOpened={true}>
         <div
-          style={{ height: height, overflow: 'hidden', position: 'relative' }}
+          style={{
+            height: limit ? height : 'auto',
+            overflow: 'hidden',
+            position: 'relative',
+          }}
         >
           <StyledMosaic>{children}</StyledMosaic>
         </div>
       </Collapse>
-      <SeeMore onClick={handleClick}>
-        {height === 500 ? 'Veja mais' : 'Veja menos'}
-      </SeeMore>
+      {limit ? (
+        <SeeMore onClick={handleClick}>
+          {height === 500 ? 'Veja mais' : 'Veja menos'}
+        </SeeMore>
+      ) : (
+        ''
+      )}
     </Wrapper>
   )
 }
