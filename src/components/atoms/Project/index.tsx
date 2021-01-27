@@ -2,13 +2,12 @@ import Embed from '../Embed'
 import { Description, Side, Title, Wrapper, Image, Tag } from './styles'
 
 export default function Project({
-  image,
-  title,
-  description,
-  embed,
+  // image,
+  // title,
+  // description,
+  // embed,
   current = undefined,
 }) {
-  current = true
   return (
     <Wrapper>
       <Image image="https://images.unsplash.com/photo-1572177812156-58036aae439c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"></Image>
