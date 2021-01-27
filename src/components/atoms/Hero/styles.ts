@@ -29,7 +29,7 @@ export const HeroWrapper = styled.div<{ backgroundImage: string }>`
   z-index: 0;
 
   * {
-    position: relative;
+    /* position: relative; */
     z-index: 1;
   }
 `
