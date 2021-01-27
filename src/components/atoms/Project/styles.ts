@@ -1,102 +1,90 @@
-import theme from '@styles/theme'
-import styled, { css } from 'styled-components'
-const { size } = theme
+import styled from 'styled-components'
 
-export const Wrapper = styled.a<{ embed: boolean }>`
-  text-decoration: none;
-  cursor: pointer;
-  width: 100%;
-  height: 100%;
+export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-
-  ${p =>
-    p.embed &&
-    css`
-      margin: 40px 0;
-      flex-direction: row;
-
-      div:first-child {
-        width: 50%;
-        margin-right: 20px;
-      }
-
-      @media ${size.small} {
-        display: block;
-        div:first-child {
-          width: 100%;
-          margin-right: 0;
-          margin-bottom: 15px;
-        }
-      }
-    `}
-
-  &:hover {
-    img {
-      transform: translate(10px, -10px);
-    }
-    h3,
-    p,
-    small {
-      opacity: 0.7;
-    }
-  }
-`
-
-export const ImageWrapper = styled.div`
-  background-color: ${p => p.theme.color.dark};
-`
-
-export const Image = styled.img`
-  display: block;
-  z-index: 1;
-  transition: transform 0.2s ease;
-
-  width: 100%;
-  height: auto;
-`
-export const ImageNotFound = styled.div`
-  background-color: ${p => p.theme.color.dark};
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-`
+  margin-bottom: 100px;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
 
-export const Caption = styled.div`
-  display: block;
-  text-align: left;
-`
-
-export const H3 = styled.h3`
-  font-size: 21px;
-  line-height: 25px;
-  margin: 15px 0 0 0;
-  ${p => p.theme.color.main};
-  transition: opacity 0.2s ease;
-`
-
-export const Lead = styled.p`
-  font-size: 16px;
-  line-height: 22px;
-  margin: 7px 0 0 0;
-  transition: opacity 0.2s ease;
-  span {
-    font-size: 14px;
-    font-style: italic;
-    white-space: nowrap;
+  @media ${p => p.theme.size.small} {
+    flex-direction: row;
   }
 `
 
-export const Small = styled.small`
-  display: block;
-  font-size: 14px;
-  line-height: 22px;
-  margin: 15px 0 0 0;
-  transition: opacity 0.2s ease;
+export const Image = styled.div<{ image: string }>`
+  background-image: url(${p => p.image});
+  width: 250px;
+  height: 250px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
 
-  @media ${size.small} {
-    margin: 7px 0 0 0;
+  @media ${p => p.theme.size.mini} {
+    width: 320px;
+    height: 320px;
+  }
+  @media ${p => p.theme.size.small} {
+    flex: 1;
+    max-width: 300px;
+    max-height: 300px;
+    width: 300px;
+    height: 300px;
+    align-self: flex-start;
+  }
+  @media ${p => p.theme.size.medium} {
+    flex: 1;
+    max-width: 500px;
+    max-height: 500px;
+    width: 500px;
+    height: 500px;
+  }
+`
+
+export const Side = styled.div`
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  @media ${p => p.theme.size.small} {
+    flex: 1;
+    align-items: flex-start;
+
+    h1 {
+      text-align: left;
+      margin-top: 0;
+    }
+  }
+`
+
+export const Title = styled.h1`
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+`
+
+export const Description = styled.p`
+  margin-top: 20px;
+  margin-bottom: 20px;
+`
+
+export const Tag = styled.div<{ current: boolean }>`
+  background-color: ${p =>
+    p.current ? p.theme.color.main : p.theme.color.darkergray};
+  color: ${p => p.theme.color.white};
+  padding: 0.5em;
+  font-size: 0.9em;
+  border-radius: ${p => p.theme.numbers.radius};
+  margin-bottom: 20px;
+  margin: 50px auto 0 auto;
+  display: inline-block;
+  font-weight: ${p => p.theme.font.weight.medium};
+
+  @media ${p => p.theme.size.small} {
+    margin: 0 0 20px 0;
   }
 `

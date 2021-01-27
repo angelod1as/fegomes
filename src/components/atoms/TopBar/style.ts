@@ -22,12 +22,13 @@ export const Title = styled.h2`
   padding: 0;
   font-size: 1em;
   font-style: normal;
-  color: ${p => p.theme.color.darkergray};
   font-weight: ${p => p.theme.font.weight.medium};
 
   a {
     text-decoration: none;
     transition: color 0.2s;
+    color: ${p => p.theme.color.black};
+
     &:hover {
       color: ${p => p.theme.color.darkergray};
     }

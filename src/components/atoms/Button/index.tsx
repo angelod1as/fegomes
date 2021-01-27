@@ -7,6 +7,7 @@ interface ButtonProps {
   children: ReactNode
   hollow?: boolean
   selected?: boolean
+  onClick?: () => void
 }
 
 export default function Button({
@@ -14,11 +15,12 @@ export default function Button({
   children,
   hollow,
   selected,
+  onClick,
 }: ButtonProps) {
   if (to) {
     return (
       <Link href={to}>
-        <StyledButton selected={selected} hollow={hollow}>
+        <StyledButton selected={selected} hollow={hollow} onClick={onClick}>
           {children}
         </StyledButton>
       </Link>

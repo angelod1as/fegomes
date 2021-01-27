@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Wrapper, Image, Icon } from './styles'
+import { Wrapper, Image, Icon, Current } from './styles'
 import { FaVolumeUp, FaCut, FaTools } from 'react-icons/fa'
 import { useCallback } from 'react'
 
@@ -11,6 +11,7 @@ interface CardProps {
   to?: string
   square?: boolean
   alt?: string
+  current?: boolean
 }
 
 export default function Card({
@@ -21,6 +22,7 @@ export default function Card({
   to,
   alt,
   square = false,
+  current = undefined,
 }: CardProps) {
   const getIcon = useCallback(() => {
     switch (icon) {
@@ -38,6 +40,7 @@ export default function Card({
   return (
     <Link href={to}>
       <Wrapper>
+        {current !== undefined && <Current current={current}></Current>}
         {icon && <Icon>{getIcon()}</Icon>}
         {image && (
           <Image
