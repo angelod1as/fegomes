@@ -1,19 +1,59 @@
+import { fetchContent } from '@functions/fetchGraphQL'
+import { PageProps, PageQueryProps } from '@interfaces/query'
 import How from '@pageComponents/How'
 
-export default function ComoFunciona() {
+interface ComoFuncionaProps {
+  pageProps: PageProps
+}
+
+export default function ComoFunciona({ pageProps }: ComoFuncionaProps) {
   return (
     <>
-      <How />
+      <How pageProps={pageProps} />
     </>
   )
 }
 
-// export async function getStaticProps({ locale }) {
-//   const items = await fetchContentful({ type: 'tile', locale })
+export async function getStaticProps() {
+  const pageQuery: PageQueryProps = await fetchContent(`
+    query pageEntryQuery {
+      page(id: "6R8dkAB4lju9hOh3BirjX4") {
+        title
+        description
+        howTitle
+        firstHowTitle
+        firstProjectsCollection {
+          items {
+            title
+            audioLink
+            description
+          }
+        }
+        secondHowTitle
+        secondProjectsCollection {
+          items {
+            title
+            audioLink
+            description
+          }
+        }
+        thirdHowTitle
+        thirdProjectsCollection {
+          items {
+            title
+            audioLink
+            description
+          }
+        }
+      }
+    }
+  `)
 
-//   return {
-//     props: {
-//       homeData: items,
-//     },
-//   }
-// }
+  const pageProps = pageQuery.page
+
+  return {
+    props: {
+      pageProps,
+    },
+  }
+}

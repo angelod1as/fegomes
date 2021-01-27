@@ -2,8 +2,8 @@ import Hero from '@components/atoms/Hero'
 import Section from '@components/atoms/Section'
 import Mosaic from '@components/atoms/Mosaic'
 import Card from '@components/atoms/Card'
-import { ProjectProps } from '@pages/projetos'
 import { nanoid } from 'nanoid'
+import { ProjectProps } from '@interfaces/query'
 
 interface HomeProps {
   projects: ProjectProps[]

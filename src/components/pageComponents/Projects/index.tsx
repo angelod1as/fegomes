@@ -2,31 +2,30 @@ import Card from '@components/atoms/Card'
 import Hero from '@components/atoms/Hero'
 import Mosaic from '@components/atoms/Mosaic'
 import Section from '@components/atoms/Section'
+import { PageProps, ProjectProps } from '@interfaces/query'
 import { nanoid } from 'nanoid'
 import slugify from 'slugify'
 import { Legend } from './style'
-import { ProjectProps } from '@pages/projetos'
 
 interface ProjectsCompProps {
   projects: ProjectProps[]
+  pageProps: PageProps
 }
 
-export default function Projects({ projects }: ProjectsCompProps) {
+export default function Projects({ projects, pageProps }: ProjectsCompProps) {
   return (
     <>
-      <Hero
-        title="Fazer podcast é gostoso demais"
-        lead="Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum minus, saepe architecto odit ducimusa"
-        main
-      />
+      <Hero title={pageProps.title} lead={pageProps.description} main />
       <Section>
         <Legend>
           <div>
             <p>
-              <span></span>Com quem ando
+              <span></span>
+              {pageProps.projectFilterCurrent}
             </p>
             <p>
-              <span></span>Já passearam comigo
+              <span></span>
+              {pageProps.projectFilterOld}
             </p>
           </div>
         </Legend>

@@ -1,6 +1,6 @@
+import { ProjectProps } from '@interfaces/query'
 import Embed from '../Embed'
 import { Description, Side, Title, Wrapper, Image, Tag } from './styles'
-import { ProjectProps } from '@pages/projetos'
 
 interface ProjectCompProps {
   project: ProjectProps
