@@ -55,7 +55,16 @@ export default function Footer({ title, lead, social }: FooterProps) {
       {social && (
         <Social>
           {social.map((each: Social) => {
-            return <div key={nanoid()}>{getSocial(each)}</div>
+            return (
+              <a
+                href={each.url}
+                target="_blank"
+                rel="noreferrer"
+                key={nanoid()}
+              >
+                {getSocial(each)}
+              </a>
+            )
           })}
         </Social>
       )}
