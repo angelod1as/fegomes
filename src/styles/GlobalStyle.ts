@@ -14,6 +14,8 @@ const GlobalStyle = createGlobalStyle<GlobalProps>`
 
   html, body {
     height: 100%;
+    background-color: ${p => p.theme.color.black};
+    color: ${p => p.theme.color.white};
   }
 
   body {
@@ -140,11 +142,11 @@ const GlobalStyle = createGlobalStyle<GlobalProps>`
       position: relative;
       line-height: 1.2em;
       &:before {
-            font-weight: ${p => p.theme.font.weight.bold};
+        font-weight: ${p => p.theme.font.weight.bold};
         top: -1px;
         left: 5px;
         position: absolute;
-        color: ${p => p.theme.color.black};
+        color: ${p => p.theme.color.white};
       }
     }
   }

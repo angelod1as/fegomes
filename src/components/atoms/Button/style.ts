@@ -26,7 +26,7 @@ export const StyledButton = styled.button<StyledButtonProps>`
       ? css`
           background-color: ${p => p.theme.color.main};
           padding: 15px 20px;
-          color: ${p => p.theme.color.white};
+          color: ${p => p.theme.color.black};
 
           transition: background-color 0.2s;
 
@@ -43,13 +43,13 @@ export const StyledButton = styled.button<StyledButtonProps>`
       ? css`
           color: ${p => p.theme.color.main};
           &:hover {
-            color: ${p => p.theme.color.black};
+            color: ${p => p.theme.color.white};
           }
         `
       : css`
           background-color: ${p => p.theme.color.dark};
           &:hover {
-            background-color: ${p => p.theme.color.black};
+            background-color: ${p => p.theme.color.white};
           }
         `)}
 `

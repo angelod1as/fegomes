@@ -14,6 +14,9 @@ export const Wrapper = styled.div`
   input,
   textarea {
     padding: 15px 20px;
+    background-color: ${p => p.theme.color.black};
+    border: 0;
+    color: ${p => p.theme.color.main};
   }
 
   label {

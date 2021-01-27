@@ -15,6 +15,7 @@ export const StyledMosaic = styled.div`
   justify-content: center;
   grid-gap: 20px;
   transition: max-height 0.3s;
+  padding-bottom: 100px;
 `
 
 export const SeeMore = styled.div`
@@ -27,11 +28,11 @@ export const SeeMore = styled.div`
   text-align: center;
   margin: 0;
   padding: 50px 0 0px 0;
-  background: rgb(255, 255, 255);
+  background: ${p => p.theme.color.white};
   background: linear-gradient(
     180deg,
     rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 1) 50%
+    ${p => p.theme.color.black} 50%
   );
   font-weight: ${p => p.theme.font.weight.medium};
 `

@@ -21,7 +21,7 @@ export const HeroWrapper = styled.div<{ backgroundImage: string }>`
           background-size: cover;
         `
       : css`
-          color: ${p => p.theme.color.black};
+          color: ${p => p.theme.color.white};
           /* min-height: 400px; */
         `}
 
@@ -61,6 +61,7 @@ export const TitleHolder = styled.div`
   h2 {
     margin: 0 0 20px 0;
     padding: 0;
+    color: ${p => p.theme.color.main};
   }
 `
 

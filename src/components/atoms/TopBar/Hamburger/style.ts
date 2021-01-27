@@ -14,7 +14,7 @@ export const MenuItems = styled.div`
   justify-content: center;
   align-items: center;
 
-  background-color: ${p => p.theme.color.white};
+  background-color: ${p => p.theme.color.black};
   width: 100%;
   opacity: 1;
   * {

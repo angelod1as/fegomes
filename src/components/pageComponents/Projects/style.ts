@@ -22,7 +22,8 @@ export const Legend = styled.div`
         height: 13px;
         border-radius: 50%;
         margin-right: 7px;
-        background-color: ${p => p.theme.color.darkergray};
+        background-color: ${p => p.theme.color.gray};
+        border: 1px solid ${p => p.theme.color.black};
       }
 
       &:first-child {

@@ -1,10 +1,8 @@
 const color = {
-  dark: '#041F60',
-  main: '#0476D0',
-  light: '#2CEEF0',
-  lighter: '#B4F5F0',
+  dark: '#996200',
+  main: '#feb106',
   white: '#FFFFFF',
-  black: '#000000',
+  black: '#191818',
   gray: '#CCCCCC',
   darkgray: '#A9A9A9',
   darkergray: '#8B8B8B',

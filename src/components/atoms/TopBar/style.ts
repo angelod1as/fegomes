@@ -7,7 +7,7 @@ export const TopBarWrapper = styled.div`
   position: sticky;
   z-index: 100;
   top: 0;
-  background-color: ${p => p.theme.color.white};
+  background-color: ${p => p.theme.color.black};
   height: ${p => p.theme.numbers.menuHeight}px;
   padding: 0 20px;
 
@@ -27,7 +27,7 @@ export const Title = styled.h2`
   a {
     text-decoration: none;
     transition: color 0.2s;
-    color: ${p => p.theme.color.black};
+    color: ${p => p.theme.color.white};
 
     &:hover {
       color: ${p => p.theme.color.darkergray};

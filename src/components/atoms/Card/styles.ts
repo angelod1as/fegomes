@@ -19,7 +19,7 @@ export const Icon = styled.div`
   align-items: center;
   justify-content: center;
   svg {
-    fill: ${p => p.theme.color.white};
+    fill: ${p => p.theme.color.black};
   }
 `
 
@@ -30,7 +30,7 @@ export const Wrapper = styled.div`
   justify-content: flex-start;
   height: 100%;
   cursor: pointer;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.2s ease;
   position: relative;
 
   h3 {
@@ -42,7 +42,7 @@ export const Wrapper = styled.div`
   }
 
   &:hover {
-    opacity: 0.7;
+    opacity: 0.5;
   }
 `
 
@@ -54,8 +54,8 @@ export const Current = styled.div<{ current: boolean }>`
   left: 10px;
   border-radius: 50%;
 
-  border: 1px solid ${p => p.theme.color.gray};
+  border: 1px solid ${p => p.theme.color.black};
 
   background-color: ${p =>
-    p.current ? p.theme.color.main : p.theme.color.darkergray};
+    p.current ? p.theme.color.main : p.theme.color.gray};
 `

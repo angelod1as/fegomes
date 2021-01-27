@@ -8,14 +8,14 @@ export const Wrapper = styled.div`
   text-align: center;
 
   background-color: ${p => p.theme.color.dark};
-  color: ${p => p.theme.color.white};
+  color: ${p => p.theme.color.black};
 
-  h3,
   a {
-    color: ${p => p.theme.color.white};
+    color: ${p => p.theme.color.black};
   }
 
   h3 {
+    color: ${p => p.theme.color.white};
     font-style: normal;
     font-size: 2em;
     margin: 50px 0 10px 0;
@@ -24,21 +24,28 @@ export const Wrapper = styled.div`
   & > p {
     max-width: 400px;
     margin: 0;
+    color: ${p => p.theme.color.white};
   }
 `
 
 export const Social = styled.div`
   display: flex;
   margin: 30px 0;
+  transition: opacity 0.3s ease;
+
+  & svg {
+    fill: ${p => p.theme.color.white};
+  }
+
+  &:hover {
+    a {
+      opacity: 0.5;
+    }
+  }
 
   div {
     margin: 0 10px;
-    transition: opacity 0.3s ease;
     cursor: pointer;
-
-    &:hover {
-      opacity: 0.5;
-    }
   }
 `
 

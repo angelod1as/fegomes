@@ -5,6 +5,7 @@ export const Wrapper = styled.div`
   max-width: 1100px;
   margin-left: auto;
   margin-right: auto;
+  margin: 0 20px;
 
   @media ${p => p.theme.size.small} {
     display: grid;
@@ -28,17 +29,15 @@ export const Image = styled.div<{ image: string }>`
   @media ${p => p.theme.size.mini} {
     width: 320px;
     height: 320px;
+    margin: 0 auto;
   }
   @media ${p => p.theme.size.small} {
-    flex: 1;
     max-width: 320px;
     max-height: 320px;
     width: 320px;
     height: 320px;
-    align-self: flex-start;
   }
   @media ${p => p.theme.size.medium} {
-    flex: 1;
     max-width: 500px;
     max-height: 500px;
     width: 500px;
@@ -75,8 +74,8 @@ export const Description = styled.p`
 
 export const Tag = styled.div<{ current: boolean }>`
   background-color: ${p =>
-    p.current ? p.theme.color.main : p.theme.color.darkergray};
-  color: ${p => p.theme.color.white};
+    p.current ? p.theme.color.main : p.theme.color.gray};
+  color: ${p => p.theme.color.black};
   padding: 0.5em;
   font-size: 0.9em;
   border-radius: ${p => p.theme.numbers.radius};
