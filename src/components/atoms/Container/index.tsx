@@ -5,12 +5,14 @@ import Contact from '@components/atoms/Contact'
 import Hero from '@components/atoms/Hero'
 import { ReactNode } from 'react'
 import Separator from '@components/atoms/Separator'
+import { PageProps } from '@interfaces/query'
 
 interface ContainerProps {
   children?: ReactNode
+  footerProps: PageProps
 }
 
-export default function Container({ children }: ContainerProps) {
+export default function Container({ children, footerProps }: ContainerProps) {
   return (
     <ContainerWrapper>
       <TopBar />
@@ -19,28 +21,25 @@ export default function Container({ children }: ContainerProps) {
       {children}
 
       <Hero
-        title="Vamos trabalhar juntos?"
-        backgroundImage="https://images.unsplash.com/photo-1520444451380-ebe0f7b9cfd5?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80"
+        title={footerProps.title}
+        backgroundImage={footerProps.footerImage[0].url}
         style={{ marginBottom: 0 }}
       >
-        <Contact />
+        <Contact footerProps={footerProps} />
       </Hero>
 
       <Footer
-        title="FeGomes Podcast"
-        lead="lorem ipsum dolor sit amet"
-        social={[
-          {
-            social: 'facebook',
-            url: 'url',
-            icon: 'facebook',
-          },
-          {
-            social: 'instagram',
-            url: 'url',
-            icon: 'instagram',
-          },
-        ]}
+        title={footerProps.footerSubTitle}
+        lead={footerProps.footerSubDescription}
+        social={Object.keys(footerProps.footerSocial)
+          .filter(each => footerProps.footerSocial[each] !== '')
+          .map(each => {
+            return {
+              social: each,
+              url: footerProps.footerSocial[each],
+              icon: each,
+            }
+          })}
       />
     </ContainerWrapper>
   )

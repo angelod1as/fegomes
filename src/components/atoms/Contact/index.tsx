@@ -1,3 +1,4 @@
+import { PageProps } from '@interfaces/query'
 import { useCallback, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import Button from '../Button'
@@ -17,7 +18,11 @@ interface FormProps {
   honeypot: string
 }
 
-export default function Contact() {
+interface ContactProps {
+  footerProps: PageProps
+}
+
+export default function Contact({ footerProps }: ContactProps) {
   const { register, handleSubmit } = useForm()
 
   const [sent, setSent] = useState(false)
@@ -61,18 +66,18 @@ export default function Contact() {
         <form onSubmit={handleSubmit(onSubmit)}>
           <Together>
             <label htmlFor="name">
-              Name:
+              {footerProps.footerName}
               <input
                 ref={register}
                 id="name"
                 key="name"
                 name="name"
-                placeholder="João Silva"
+                placeholder={footerProps.footerNamePlaceholder}
               />
             </label>
 
             <label htmlFor="email">
-              Your Email Address:
+              {footerProps.footerEmail}
               <input
                 ref={register}
                 id="email"
@@ -80,20 +85,20 @@ export default function Contact() {
                 name="email"
                 type="email"
                 required
-                placeholder="seu.nome@email.com"
+                placeholder={footerProps.footerEmailPlaceholder}
               />
             </label>
           </Together>
 
           <label htmlFor="message">
-            Message:
+            {footerProps.footerMessage}
             <textarea
               ref={register}
               id="message"
               key="message"
               name="message"
               rows={10}
-              placeholder="Fale sobre sua ideia, projeto ou questionamento..."
+              placeholder={footerProps.footerEmailPlaceholder}
             />
           </label>
 
@@ -109,7 +114,7 @@ export default function Contact() {
             />
           </label>
 
-          <Button>Enviar mensagem</Button>
+          <Button>{footerProps.footerButton}</Button>
         </form>
       )}
     </Wrapper>

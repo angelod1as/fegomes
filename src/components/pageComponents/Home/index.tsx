@@ -3,25 +3,34 @@ import Section from '@components/atoms/Section'
 import Mosaic from '@components/atoms/Mosaic'
 import Card from '@components/atoms/Card'
 import { nanoid } from 'nanoid'
-import { ProjectProps } from '@interfaces/query'
+import { PageProps, ProjectProps } from '@interfaces/query'
 
 interface HomeProps {
   projects: ProjectProps[]
   highlighted: ProjectProps[]
+  how: PageProps
+  home: PageProps
+  projectPageSlug: PageProps['slug']
 }
 
-export default function Home({ projects, highlighted }: HomeProps) {
+export default function Home({
+  projects,
+  highlighted,
+  how,
+  home,
+  projectPageSlug,
+}: HomeProps) {
   return (
     <>
       <Hero
-        title="Transforme seu projeto em realidade"
-        lead="Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum minus, saepe architecto odit ducimusa"
-        button="Veja meus projetos"
-        to="/projetos"
-        backgroundImage="https://images.unsplash.com/photo-1544719576-904e2d01e057?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1376&q=80"
+        title={home.title}
+        lead={home.description}
+        button={home.homeMainButton}
+        to={`/${projectPageSlug}`}
+        backgroundImage={home.homeImage[0].url}
         main
       />
-      <Section title="Projetos de destaque">
+      <Section title={home.homeHighlightedTitle}>
         <Mosaic>
           {highlighted.map((each: ProjectProps) => (
             <Card
@@ -29,42 +38,42 @@ export default function Home({ projects, highlighted }: HomeProps) {
               image={each.image[0].url}
               title={each.title}
               description={each.shortDescription}
-              to={`/projetos/${each.slug}`}
+              to={`/${projectPageSlug}/${each.slug}`}
             />
           ))}
         </Mosaic>
       </Section>
-      <Section title="Nossos podcasts">
+      <Section title={home.homePodcastsTitle}>
         <Mosaic limit>
           {projects.map(each => (
             <Card
               key={nanoid()}
               image={each.image[0].url}
-              to={`/projetos/${each.slug}`}
+              to={`/${projectPageSlug}/${each.slug}`}
               alt={each.title}
             />
           ))}
         </Mosaic>
       </Section>
-      <Section title="Como funciona">
+      <Section title={home.homeHowItWorksTitle}>
         <Mosaic>
           <Card
             icon="treatment"
-            title="Tratamento"
-            description="suscipit accusamus laborum odit ipsum eos minima autem libero similique ipsam neq"
-            to="/como-funciona"
+            title={how.firstHowTitle}
+            description={how.firstHowDescription}
+            to={how.slug}
           />
           <Card
             icon="edit"
-            title="Edição"
-            description="suscipit accusamus laborum odit ipsum eos minima autem libero similique ipsam neq"
-            to="/como-funciona"
+            title={how.secondHowTitle}
+            description={how.secondHowDescription}
+            to={how.slug}
           />
           <Card
             icon="sound"
-            title="Sonorização"
-            description="suscipit accusamus laborum odit ipsum eos minima autem libero similique ipsam neq"
-            to="/como-funciona"
+            title={how.thirdHowTitle}
+            description={how.thirdHowDescription}
+            to={how.slug}
           />
         </Mosaic>
       </Section>

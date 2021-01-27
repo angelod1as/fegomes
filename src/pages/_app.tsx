@@ -3,20 +3,20 @@ import { ThemeProvider } from 'styled-components'
 import { theme } from '@styles/theme'
 import GlobalStyle from '@styles/GlobalStyle'
 import Head from 'next/head'
-import { useState } from 'react'
 import Container from '@components/atoms/Container'
+import { PageProps } from '@interfaces/query'
 
-function App({ Component, pageProps }: AppProps) {
-  // TODO: Loading
-  const [loading, setLoading] = useState(false)
+interface AppCustomProps extends AppProps {
+  footerProps: PageProps
+}
 
+function App({ Component, pageProps }: AppCustomProps) {
   return (
     <>
       <FirstHead />
       <ThemeProvider theme={theme}>
         <GlobalStyle />
-        <Container>
-          {loading && <div>LOADING</div>}
+        <Container footerProps={pageProps.footerProps}>
           <Component {...pageProps} />
         </Container>
       </ThemeProvider>
