@@ -59,7 +59,7 @@ function FirstHead() {
       />
       <meta
         property="og:image"
-        content="https://res.cloudinary.com/femaxpe/image/upload/v1611773626/Novo_Projeto_zgbxuy.png"
+        content="https://res.cloudinary.com/femaxpe/image/upload/v1611781248/TESTE03_ebre41.png"
       />
       {/* Twitter */}
       <meta property="twitter:card" content="summary_large_image" />
@@ -72,7 +72,7 @@ function FirstHead() {
       />
       <meta
         property="twitter:image"
-        content="https://res.cloudinary.com/femaxpe/image/upload/v1611773626/Novo_Projeto_zgbxuy.png"
+        content="https://res.cloudinary.com/femaxpe/image/upload/v1611781248/TESTE03_ebre41.png"
       />
       <meta name="keywords" content="portfolio, podcast, audio, editing" />
       <meta name="author" content="Angelo Dias <oiangelodias@gmail.com>" />
