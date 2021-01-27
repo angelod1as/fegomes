@@ -8,14 +8,13 @@ export const Wrapper = styled.div`
   }
 `
 
-export const StyledMosaic = styled.div<{ height: string }>`
-  /* display: grid;
+export const StyledMosaic = styled.div`
+  display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   align-items: center;
   justify-content: center;
   grid-gap: 20px;
-  transition: max-height 0.3s; */
-  height: ${p => p.height};
+  transition: max-height 0.3s;
 `
 
 export const SeeMore = styled.div`

@@ -4,45 +4,28 @@ import { Collapse } from 'react-collapse'
 
 interface MosaicProps {
   children: ReactNode
-  limit: boolean
+  limit?: boolean
 }
 
-// {/* <Collapse isOpened={isOpened}>
-//   <StyledMosaic height={height}>{children}</StyledMosaic>
-// </Collapse>
-// {limit ? (
-//   <SeeMore onClick={handleClick}>
-//     {isOpened ? 'Veja menos' : 'Veja mais'}
-//   </SeeMore>
-// ) : (
-//   ''
-// )} */}
-
-// {/* <Collapse isOpened={isOpened}>
-//   <StyledMosaic height={height}>{children}</StyledMosaic>
-// </Collapse>
-
-// <SeeMore onClick={handleClick}>
-//   {isOpened ? 'Veja menos' : 'Veja mais'}
-// </SeeMore> */}
-
 export default function Mosaic({ children }) {
-  const [isOpened, setIsOpened] = useState(false)
   const [height, setHeight] = useState<number | string>(500)
 
   const handleClick = useCallback(() => {
-    setHeight('auto')
-    setIsOpened(!isOpened)
-  }, [isOpened])
+    setHeight(height === 500 ? 'auto' : 500)
+  }, [height])
 
   return (
-    <div>
-      <button onClick={handleClick}>
-        {isOpened ? 'Veja menos' : 'Veja mais'}
-      </button>
-      <Collapse isOpened={isOpened}>
-        <div style={{ height: height }}>{children}</div>
+    <Wrapper>
+      <Collapse isOpened={true}>
+        <div
+          style={{ height: height, overflow: 'hidden', position: 'relative' }}
+        >
+          <StyledMosaic>{children}</StyledMosaic>
+        </div>
       </Collapse>
-    </div>
+      <SeeMore onClick={handleClick}>
+        {height === 500 ? 'Veja mais' : 'Veja menos'}
+      </SeeMore>
+    </Wrapper>
   )
 }
