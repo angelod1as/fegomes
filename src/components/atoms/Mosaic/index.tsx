@@ -1,25 +1,31 @@
-import { ReactNode, useState } from 'react'
-import { StyledMosaic, SeeMore } from './styles'
+import { ReactNode, useCallback, useState } from 'react'
+import { StyledMosaic, SeeMore, Wrapper } from './styles'
+import { Collapse } from 'react-collapse'
 
 interface MosaicProps {
   children: ReactNode
   limit?: boolean
 }
 
-export default function Mosaic({ children, limit }: MosaicProps) {
-  const [isOpened, setIsOpened] = useState(false)
+export default function Mosaic({ children }) {
+  const [height, setHeight] = useState<number | string>(500)
+
+  const handleClick = useCallback(() => {
+    setHeight(height === 500 ? 'auto' : 500)
+  }, [height])
+
   return (
-    <div>
-      <StyledMosaic limit={limit} isOpened={isOpened}>
-        {children}
-        {limit ? (
-          <SeeMore onClick={() => setIsOpened(!isOpened)}>
-            {isOpened ? 'Veja menos' : 'Veja mais'}
-          </SeeMore>
-        ) : (
-          ''
-        )}
-      </StyledMosaic>
-    </div>
+    <Wrapper>
+      <Collapse isOpened={true}>
+        <div
+          style={{ height: height, overflow: 'hidden', position: 'relative' }}
+        >
+          <StyledMosaic>{children}</StyledMosaic>
+        </div>
+      </Collapse>
+      <SeeMore onClick={handleClick}>
+        {height === 500 ? 'Veja mais' : 'Veja menos'}
+      </SeeMore>
+    </Wrapper>
   )
 }

@@ -1,25 +1,20 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 
-export const StyledMosaic = styled.div<{ isOpened: boolean; limit: boolean }>`
+export const Wrapper = styled.div`
+  position: relative;
+
+  .ReactCollapse--collapse {
+    transition: height 0.7s;
+  }
+`
+
+export const StyledMosaic = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   align-items: center;
   justify-content: center;
   grid-gap: 20px;
-  overflow: hidden;
-  position: relative;
   transition: max-height 0.3s;
-
-  ${p =>
-    p.limit &&
-    (p.isOpened
-      ? css`
-          max-height: unset;
-          padding-bottom: 50px;
-        `
-      : css`
-          max-height: 500px;
-        `)}
 `
 
 export const SeeMore = styled.div`
