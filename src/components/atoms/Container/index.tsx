@@ -13,34 +13,38 @@ interface ContainerProps {
 }
 
 export default function Container({ children, footerProps }: ContainerProps) {
-  return (
-    <ContainerWrapper>
-      <TopBar />
-      <Separator h={50}></Separator>
+  if (footerProps) {
+    return (
+      <ContainerWrapper>
+        <TopBar />
+        <Separator h={50}></Separator>
 
-      {children}
+        {children}
 
-      <Hero
-        title={footerProps.title}
-        backgroundImage={footerProps.footerImage[0].url}
-        style={{ marginBottom: 0 }}
-      >
-        <Contact footerProps={footerProps} />
-      </Hero>
+        <Hero
+          title={footerProps.title}
+          backgroundImage={footerProps.footerImage[0].url}
+          style={{ marginBottom: 0 }}
+        >
+          <Contact footerProps={footerProps} />
+        </Hero>
 
-      <Footer
-        title={footerProps.footerSubTitle}
-        lead={footerProps.footerSubDescription}
-        social={Object.keys(footerProps.footerSocial)
-          .filter(each => footerProps.footerSocial[each] !== '')
-          .map(each => {
-            return {
-              social: each,
-              url: footerProps.footerSocial[each],
-              icon: each,
-            }
-          })}
-      />
-    </ContainerWrapper>
-  )
+        <Footer
+          title={footerProps.footerSubTitle}
+          lead={footerProps.footerSubDescription}
+          social={Object.keys(footerProps.footerSocial)
+            .filter(each => footerProps.footerSocial[each] !== '')
+            .map(each => {
+              return {
+                social: each,
+                url: footerProps.footerSocial[each],
+                icon: each,
+              }
+            })}
+        />
+      </ContainerWrapper>
+    )
+  } else {
+    return <div></div>
+  }
 }
