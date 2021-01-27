@@ -1,9 +1,13 @@
 import Project from '@components/atoms/Project'
 import { fetchContent } from '@functions/fetchGraphQL'
+import NotFound from '@pageComponents/NotFound'
 import { ProjectQueryProps } from '@pages/projetos'
 
 export default function ProjectPage({ project }) {
-  return <Project project={project}></Project>
+  if (project) {
+    return <Project project={project}></Project>
+  }
+  return <NotFound></NotFound>
 }
 
 export async function getStaticPaths() {
@@ -39,9 +43,7 @@ export async function getStaticProps({ params }: Params) {
       items {
         title
         description
-        image {
-          cloudinary
-        }
+        image
         embed
         current
       }
@@ -53,7 +55,7 @@ export async function getStaticProps({ params }: Params) {
 
   return {
     props: {
-      project,
+      project: project || null,
     },
   }
 }

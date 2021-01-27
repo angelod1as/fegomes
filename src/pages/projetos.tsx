@@ -9,11 +9,11 @@ export interface ProjectProps {
   slug: string
   title: string
   description: string
-  image: {
-    cloudinary: CloudinaryItem[]
-  }
+  shortDescription: string
+  image: CloudinaryItem[]
   current: boolean
   embed: string
+  highlighted: boolean
 }
 
 export interface ProjectQueryProps {
@@ -35,18 +35,16 @@ export default function Projetos({ projects }: ProjetosProps) {
 }
 
 export async function getStaticProps() {
-  // const items = await fetchContentful({ type: 'tile', locale })
   const projectsQuery: ProjectQueryProps = await fetchContent(`
     query projectCollectionQuery {
       projectCollection {
         items {
           title
           description
-          image {
-            cloudinary
-          }
           embed
           current
+          shortDescription
+          image
         }
       }
     }

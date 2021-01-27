@@ -1,9 +1,8 @@
 import styled from 'styled-components'
 
-export const Image = styled.div<{ image: string; square: boolean }>`
+export const Image = styled.div<{ image: string }>`
   width: 100%;
-  height: 200px;
-  ${p => (p.square ? `height: 300px;` : '')}
+  height: 300px;
   background-color: ${p => p.theme.color.main};
   background-image: url(${p => p.image});
   background-size: cover;
@@ -28,7 +27,7 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   height: 100%;
   cursor: pointer;
   transition: opacity 0.3s ease;

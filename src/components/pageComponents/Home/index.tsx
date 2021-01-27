@@ -2,8 +2,15 @@ import Hero from '@components/atoms/Hero'
 import Section from '@components/atoms/Section'
 import Mosaic from '@components/atoms/Mosaic'
 import Card from '@components/atoms/Card'
+import { ProjectProps } from '@pages/projetos'
+import { nanoid } from 'nanoid'
 
-export default function Home() {
+interface HomeProps {
+  projects: ProjectProps[]
+  highlighted: ProjectProps[]
+}
+
+export default function Home({ projects, highlighted }: HomeProps) {
   return (
     <>
       <Hero
@@ -16,119 +23,27 @@ export default function Home() {
       />
       <Section title="Projetos de destaque">
         <Mosaic>
-          {/* Mosaic */}
-          <Card
-            image="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-            title="Projeto 1"
-            lead="suscipit accusamus laborum odit ipsum eos minima autem libero similique ipsam neq"
-            to="projetos/projeto-1"
-          />
-          <Card
-            image="https://images.unsplash.com/photo-1572177812156-58036aae439c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-            title="Projeto 2"
-            lead="suscipit accusamus laborum odit ipsum eos minima autem libero similique ipsam neq"
-            to="projeto-2"
-          />
-          <Card
-            image="https://images.unsplash.com/photo-1586281380117-5a60ae2050cc?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80"
-            title="Projeto 2"
-            lead="suscipit accusamus laborum odit ipsum eos minima autem libero similique ipsam neq"
-            to="projeto-3"
-          />
+          {highlighted.map((each: ProjectProps) => (
+            <Card
+              key={nanoid()}
+              image={each.image[0].url}
+              title={each.title}
+              description={each.shortDescription}
+              to={`/projetos/${each.slug}`}
+            />
+          ))}
         </Mosaic>
       </Section>
       <Section title="Nossos podcasts">
         <Mosaic limit>
-          <Card
-            square
-            image="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-            to="/projetos/nome-do-projeto"
-            alt="Nome do projeto"
-          />
-          <Card
-            square
-            image="https://images.unsplash.com/photo-1572177812156-58036aae439c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-            to="/projetos/nome-do-projeto"
-            alt="Nome do projeto"
-          />
-          <Card
-            square
-            image="https://images.unsplash.com/photo-1586281380117-5a60ae2050cc?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80"
-            to="/projetos/nome-do-projeto"
-            alt="Nome do projeto"
-          />
-          <Card
-            square
-            image="https://images.unsplash.com/photo-1586281380117-5a60ae2050cc?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80"
-            to="/projetos/nome-do-projeto"
-            alt="Nome do projeto"
-          />
-          <Card
-            square
-            image="https://images.unsplash.com/photo-1586281380117-5a60ae2050cc?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80"
-            to="/projetos/nome-do-projeto"
-            alt="Nome do projeto"
-          />
-          <Card
-            square
-            image="https://images.unsplash.com/photo-1586281380117-5a60ae2050cc?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80"
-            to="/projetos/nome-do-projeto"
-            alt="Nome do projeto"
-          />
-          <Card
-            square
-            image="https://images.unsplash.com/photo-1586281380117-5a60ae2050cc?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80"
-            to="/projetos/nome-do-projeto"
-            alt="Nome do projeto"
-          />
-          <Card
-            square
-            image="https://images.unsplash.com/photo-1586281380117-5a60ae2050cc?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80"
-            to="/projetos/nome-do-projeto"
-            alt="Nome do projeto"
-          />
-          <Card
-            square
-            image="https://images.unsplash.com/photo-1586281380117-5a60ae2050cc?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80"
-            to="/projetos/nome-do-projeto"
-            alt="Nome do projeto"
-          />
-          <Card
-            square
-            image="https://images.unsplash.com/photo-1586281380117-5a60ae2050cc?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80"
-            to="/projetos/nome-do-projeto"
-            alt="Nome do projeto"
-          />
-          <Card
-            square
-            image="https://images.unsplash.com/photo-1586281380117-5a60ae2050cc?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80"
-            to="/projetos/nome-do-projeto"
-            alt="Nome do projeto"
-          />
-          <Card
-            square
-            image="https://images.unsplash.com/photo-1586281380117-5a60ae2050cc?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80"
-            to="/projetos/nome-do-projeto"
-            alt="Nome do projeto"
-          />
-          <Card
-            square
-            image="https://images.unsplash.com/photo-1586281380117-5a60ae2050cc?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80"
-            to="/projetos/nome-do-projeto"
-            alt="Nome do projeto"
-          />
-          <Card
-            square
-            image="https://images.unsplash.com/photo-1586281380117-5a60ae2050cc?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80"
-            to="/projetos/nome-do-projeto"
-            alt="Nome do projeto"
-          />
-          <Card
-            square
-            image="https://images.unsplash.com/photo-1586281380117-5a60ae2050cc?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80"
-            to="/projetos/nome-do-projeto"
-            alt="Nome do projeto"
-          />
+          {projects.map(each => (
+            <Card
+              key={nanoid()}
+              image={each.image[0].url}
+              to={`/projetos/${each.slug}`}
+              alt={each.title}
+            />
+          ))}
         </Mosaic>
       </Section>
       <Section title="Como funciona">
@@ -136,19 +51,19 @@ export default function Home() {
           <Card
             icon="treatment"
             title="Tratamento"
-            lead="suscipit accusamus laborum odit ipsum eos minima autem libero similique ipsam neq"
+            description="suscipit accusamus laborum odit ipsum eos minima autem libero similique ipsam neq"
             to="/como-funciona"
           />
           <Card
             icon="edit"
             title="Edição"
-            lead="suscipit accusamus laborum odit ipsum eos minima autem libero similique ipsam neq"
+            description="suscipit accusamus laborum odit ipsum eos minima autem libero similique ipsam neq"
             to="/como-funciona"
           />
           <Card
             icon="sound"
             title="Sonorização"
-            lead="suscipit accusamus laborum odit ipsum eos minima autem libero similique ipsam neq"
+            description="suscipit accusamus laborum odit ipsum eos minima autem libero similique ipsam neq"
             to="/como-funciona"
           />
         </Mosaic>

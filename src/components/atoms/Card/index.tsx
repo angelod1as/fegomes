@@ -9,7 +9,6 @@ interface CardProps {
   title?: string
   description?: string
   to?: string
-  square?: boolean
   alt?: string
   current?: boolean
 }
@@ -21,7 +20,6 @@ export default function Card({
   image,
   to,
   alt,
-  square = false,
   current = undefined,
 }: CardProps) {
   const getIcon = useCallback(() => {
@@ -42,14 +40,7 @@ export default function Card({
       <Wrapper>
         {current !== undefined && <Current current={current}></Current>}
         {icon && <Icon>{getIcon()}</Icon>}
-        {image && (
-          <Image
-            image={image}
-            square={square}
-            role="img"
-            aria-label={title || alt}
-          />
-        )}
+        {image && <Image image={image} role="img" aria-label={title || alt} />}
         {title && <h3>{title}</h3>}
         {description && <p>{description}</p>}
       </Wrapper>

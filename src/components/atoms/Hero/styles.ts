@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
 
-export const Wrapper = styled.div<{ backgroundImage: string }>`
+export const HeroWrapper = styled.div<{ backgroundImage: string }>`
   width: 100%;
 
   display: flex;
@@ -8,6 +8,7 @@ export const Wrapper = styled.div<{ backgroundImage: string }>`
   align-items: center;
   justify-content: center;
   padding-top: 100px;
+  margin: 50px 0;
 
   ${p =>
     p.backgroundImage

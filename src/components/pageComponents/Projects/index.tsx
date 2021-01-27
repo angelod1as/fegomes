@@ -34,9 +34,9 @@ export default function Projects({ projects }: ProjectsCompProps) {
           {projects.map((each: ProjectProps) => (
             <Card
               key={nanoid()}
-              image={each.image.cloudinary[0].url}
+              image={each.image[0].url}
               title={each.title}
-              description={each.description}
+              description={each.shortDescription}
               to={`/projetos/${slugify(each.title, { lower: true })}`}
               current={each.current}
             />

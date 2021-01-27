@@ -11,7 +11,7 @@ export default function Project({
 }: ProjectCompProps) {
   return (
     <Wrapper>
-      <Image image={image.cloudinary[0].url}></Image>
+      <Image image={image[0].url}></Image>
       <Side>
         {current !== undefined ? (
           <Tag current={current}>

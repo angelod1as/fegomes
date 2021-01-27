@@ -1,6 +1,7 @@
 import { ReactNode } from 'react'
+import { CSSProperties } from 'styled-components'
 import Button from '../Button'
-import { Wrapper, TitleHolder, Lead, Filter, Holder } from './styles'
+import { HeroWrapper, TitleHolder, Lead, Filter, Holder } from './styles'
 
 interface HeroProps {
   title: string
@@ -11,6 +12,7 @@ interface HeroProps {
   main?: boolean
   children?: ReactNode
   className?: string
+  style?: CSSProperties
 }
 
 export default function Hero({
@@ -21,11 +23,21 @@ export default function Hero({
   backgroundImage,
   main,
   children,
+  style = {},
 }: HeroProps) {
   const titleTag = main ? <h1>{title}</h1> : <h2>{title}</h2>
+  const MainStyle = main ? { marginTop: 0 } : {}
+  const HeroStyle = {
+    ...style,
+    ...MainStyle,
+  }
 
   return (
-    <Wrapper backgroundImage={backgroundImage}>
+    <HeroWrapper
+      className={main && 'mainHero'}
+      backgroundImage={backgroundImage}
+      style={HeroStyle}
+    >
       {backgroundImage && <Filter />}
       <Holder>
         {title && <TitleHolder>{titleTag}</TitleHolder>}
@@ -33,6 +45,6 @@ export default function Hero({
         {button && <Button to={to}>{button}</Button>}
         {children}
       </Holder>
-    </Wrapper>
+    </HeroWrapper>
   )
 }

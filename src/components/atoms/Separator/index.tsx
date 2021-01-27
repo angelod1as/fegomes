@@ -5,10 +5,10 @@ interface SeparatorProps {
   w?: number
 }
 
-const Component = styled.div<SeparatorProps>`
+const StyledSeparator = styled.div<SeparatorProps>`
   margin: ${p => (p.h ? p.h / 2 : 0)}px ${p => (p.w ? p.w / 2 : 0)}px;
 `
 
 export default function Separator({ h, w }: SeparatorProps) {
-  return <Component {...{ h, w }}></Component>
+  return <StyledSeparator {...{ h, w }}></StyledSeparator>
 }

@@ -1,14 +1,14 @@
 import Link from 'next/link'
 import Button from '../Button'
 import Hamburger from './Hamburger'
-import { Wrapper, Title } from './style'
+import { TopBarWrapper, Title } from './style'
 import { useRouter } from 'next/router'
 
 export default function TopBar() {
   const { pathname } = useRouter()
 
   return (
-    <Wrapper>
+    <TopBarWrapper>
       <Title>
         <Link href="/">FeGomes Podcast</Link>
       </Title>
@@ -30,6 +30,6 @@ export default function TopBar() {
           Contato
         </Button>
       </Hamburger>
-    </Wrapper>
+    </TopBarWrapper>
   )
 }

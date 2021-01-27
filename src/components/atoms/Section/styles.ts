@@ -1,8 +1,7 @@
 import styled from 'styled-components'
 
 export const Wrapper = styled.div`
-  padding: 50px 0;
-  margin: 0 auto;
+  margin: 50px auto;
   max-width: ${p => p.theme.numbers.section};
   width: 100%;
 `
