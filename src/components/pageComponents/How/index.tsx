@@ -20,12 +20,12 @@ export default function How({ pageProps }: HowProps) {
           {columns.map((each: string) => (
             <Column key={nanoid()}>
               <h3>{pageProps[`${each}HowTitle`]}</h3>
+              <p>{pageProps[`${each}HowDescription`]}</p>
               {pageProps[`${each}ProjectsCollection`].items.map(
                 (each: ProjectsCollectionProps) => (
                   <Card key={nanoid()}>
                     <h3>{each.title}</h3>
                     <Audio url={each.audioLink[0].url} />
-                    <p>{each.description}</p>
                   </Card>
                 )
               )}

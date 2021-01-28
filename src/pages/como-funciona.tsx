@@ -22,11 +22,13 @@ export async function getStaticProps() {
         description
         howTitle
         firstHowTitle
+        firstHowDescription
+        secondHowDescription
+        thirdHowDescription
         firstProjectsCollection {
           items {
             title
             audioLink
-            description
           }
         }
         secondHowTitle
@@ -34,7 +36,6 @@ export async function getStaticProps() {
           items {
             title
             audioLink
-            description
           }
         }
         thirdHowTitle
@@ -42,7 +43,6 @@ export async function getStaticProps() {
           items {
             title
             audioLink
-            description
           }
         }
       }

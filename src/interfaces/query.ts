@@ -3,7 +3,6 @@ import { CloudinaryItem } from '@interfaces/cloudinary'
 export interface ProjectsCollectionProps {
   title: string
   audioLink: CloudinaryItem[]
-  description: string
 }
 
 export interface PageProps {
