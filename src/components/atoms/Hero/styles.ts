@@ -41,7 +41,7 @@ export const Filter = styled.div`
   right: 0;
   bottom: 0;
   background-color: ${p => p.theme.color.black};
-  opacity: 0.7;
+  opacity: 0.8;
 `
 
 export const Holder = styled.div`
@@ -67,5 +67,5 @@ export const TitleHolder = styled.div`
 
 export const Lead = styled.p`
   margin-bottom: 20px;
-  font-weight: ${p => p.theme.font.weight.regular};
+  font-weight: ${p => p.theme.font.weight.medium};
 `

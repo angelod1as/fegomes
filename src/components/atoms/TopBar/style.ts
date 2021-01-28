@@ -20,7 +20,7 @@ export const Title = styled.h2`
   cursor: pointer;
   margin: 0;
   padding: 0;
-  font-size: 1em;
+  font-size: 1.3em;
   font-style: normal;
   font-weight: ${p => p.theme.font.weight.medium};
 

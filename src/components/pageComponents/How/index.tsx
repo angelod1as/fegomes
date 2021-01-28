@@ -14,7 +14,12 @@ const columns = ['first', 'second', 'third']
 export default function How({ pageProps }: HowProps) {
   return (
     <>
-      <Hero title={pageProps.title} lead={pageProps.description} main />
+      <Hero
+        title={pageProps.title}
+        lead={pageProps.description}
+        main
+        backgroundImage="https://res.cloudinary.com/femaxpe/image/upload/v1611799362/ss_persp_v63_pvlimu.jpg"
+      />
       <Section title={pageProps.howTitle}>
         <Columns>
           {columns.map((each: string) => (
