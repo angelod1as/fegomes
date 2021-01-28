@@ -11,19 +11,21 @@ export default function Project({
 }: ProjectCompProps) {
   return (
     <Wrapper>
-      <Image image={image[0].url}></Image>
-      <Side>
-        {current !== undefined ? (
-          <Tag current={current}>
-            {current ? 'Anda comigo' : 'Já andou comigo'}
-          </Tag>
-        ) : (
-          ''
-        )}
-        <Title>{title}</Title>
-        <Description>{description}</Description>
-        <Embed embed={embed}></Embed>
-      </Side>
+      <div>
+        <Image image={image[0].url}></Image>
+        <Side>
+          {current !== undefined ? (
+            <Tag current={current}>
+              {current ? 'Anda comigo' : 'Já andou comigo'}
+            </Tag>
+          ) : (
+            ''
+          )}
+          <Title>{title}</Title>
+          <Description>{description}</Description>
+          <Embed embed={embed}></Embed>
+        </Side>
+      </div>
     </Wrapper>
   )
 }

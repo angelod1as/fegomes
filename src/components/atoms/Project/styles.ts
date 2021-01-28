@@ -1,20 +1,26 @@
 import styled from 'styled-components'
 
 export const Wrapper = styled.div`
-  margin-bottom: 100px;
-  max-width: 1100px;
-  margin-left: auto;
-  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0 20px;
+  & > div {
+    margin-bottom: 100px;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
 
-  @media ${p => p.theme.size.small} {
-    display: grid;
-    grid-gap: 20px;
-    grid-template-columns: 320px minmax(320px, 1fr);
-  }
+    @media ${p => p.theme.size.small} {
+      display: grid;
 
-  @media ${p => p.theme.size.medium} {
-    grid-template-columns: 500px minmax(500px, 1fr);
+      grid-gap: 20px;
+      grid-template-columns: 320px minmax(320px, 1fr);
+    }
+
+    @media ${p => p.theme.size.large} {
+      grid-template-columns: 500px minmax(500px, 1fr);
+    }
   }
 `
 
@@ -37,7 +43,7 @@ export const Image = styled.div<{ image: string }>`
     width: 320px;
     height: 320px;
   }
-  @media ${p => p.theme.size.medium} {
+  @media ${p => p.theme.size.large} {
     max-width: 500px;
     max-height: 500px;
     width: 500px;
