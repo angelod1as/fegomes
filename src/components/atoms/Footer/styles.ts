@@ -33,6 +33,10 @@ export const Social = styled.div`
   margin: 30px 0;
   transition: opacity 0.3s ease;
 
+  a {
+    margin: 0 7px;
+  }
+
   & svg {
     fill: ${p => p.theme.color.white};
   }
