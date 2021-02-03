@@ -60,7 +60,7 @@ export default function Contact({ footerProps }: ContactProps) {
     <Wrapper>
       {sent ? (
         <div className="thankyou_message">
-          <h2>Obrigado! Entraremos em contato em breve.</h2>
+          <h2>Obrigado! Entrarei em contato em breve.</h2>
         </div>
       ) : (
         <form onSubmit={handleSubmit(onSubmit)}>
